@@ -10,3 +10,8 @@ SetUp Files
 Create a file called appsettings.Development.json under your Repo folder.
 This file should be copy of appsettings.json minus the following line ""AllowedHosts": "*""
 Then fill in the AdminPassword attribute with a password that contains Uppercase/Lowercase/digits and special characters.
+
+Help
+ UI
+  Code samples for UI components can be found here:
+  https://getbootstrap.com/docs/5.2/examples/cheatsheet/
