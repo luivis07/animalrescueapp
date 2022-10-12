@@ -15,55 +15,9 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" aria-label="Main">
-            <div class="container">
-                <a class="navbar-brand" href="#">Saving Sage</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarsExample07">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Meet Our Animals</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Application Forms</a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Volunteer Application</a></li>
-                        <li><a class="dropdown-item" href="#">Foster Application</a></li>
-                        <li><a class="dropdown-item" href="#">Adoption Application</a></li>
-                        <li><a class="dropdown-item" href="#">Small Animal Application</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documents</a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Volunteer Waiver</a></li>
-                        <li><a class="dropdown-item" href="#">Adoption Contract</a></li>
-                        <li><a class="dropdown-item" href="#">Foster to Adopt Contract</a></li>
-                        <li><a class="dropdown-item" href="#">Volunteer Form Flyer</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Get Involved</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    </ul>
-                    <form role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
-            </div>
-        </nav>
+        <menu alias="alias:MainMenu" cache-id="MainMenu" cache-fixed-duration="00:05:00" cache-tag="alias:MainMenu"/>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
