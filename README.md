@@ -1,17 +1,28 @@
-Documentation goes here
+Documentation:
+
 Official Site
 https://savingsagerescue.org/
 
-Tech Requirements
-Download Net 6.0 SDK
+Tech Requirements:
+-Download Net 6.0 SDK
+-Visual Studio Code
+-Git Bash
 
+Setup:
+Projects
+-animalrescue.web - FrontEnd
+-animalrescue.mainmodule - Middle Layer (future use as of now)
+-animalrescue.defaulttheme - Holds custom theme for app
 
-SetUp Files
-Create a file called appsettings.Development.json under your Repo folder.
-This file should be copy of appsettings.json minus the following line ""AllowedHosts": "*""
-Then fill in the AdminPassword attribute with a password that contains Uppercase/Lowercase/digits and special characters.
+To Build/Run:
+dotnet build .\animalrescue.sln
+dotnet run --project .\src\animalrescue.web\animalrescue.web.csproj
 
 Help
  UI
   Code samples for UI components can be found here:
   https://getbootstrap.com/docs/5.2/examples/cheatsheet/
+ OrchardCore
+  https://orcharddojo.net/orchard-training/dojo-course-3-the-full-orchard-core-tutorial
+  https://www.youtube.com/playlist?list=PLuskKJW0FhJcSX7j0Bd-1X5hq3dgCtYwO
+  https://github.com/Lombiq/Dojo-Course-3-Orchard-Core-Demo
