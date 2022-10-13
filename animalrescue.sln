@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.web", "src\animalrescue.web\animalrescue.web.csproj", "{FB5E41C4-6705-4C08-AA55-EDEEEC611963}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule", "src\modules\animalrescue.mainmodule\animalrescue.mainmodule.csproj", "{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "themes", "themes", "{8C3D25B9-A175-49C8-8827-47C63C637575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.defaulttheme", "src\themes\animalrescue.defaulttheme\animalrescue.defaulttheme.csproj", "{298AC011-694E-4F5A-964A-4B9088DC87D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB5E41C4-6705-4C08-AA55-EDEEEC611963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5E41C4-6705-4C08-AA55-EDEEEC611963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5E41C4-6705-4C08-AA55-EDEEEC611963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5E41C4-6705-4C08-AA55-EDEEEC611963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB5E41C4-6705-4C08-AA55-EDEEEC611963} = {80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}
+		{4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B} = {80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}
+		{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0} = {4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B}
+		{8C3D25B9-A175-49C8-8827-47C63C637575} = {80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}
+		{298AC011-694E-4F5A-964A-4B9088DC87D6} = {8C3D25B9-A175-49C8-8827-47C63C637575}
+	EndGlobalSection
+EndGlobal
