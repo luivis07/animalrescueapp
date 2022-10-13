@@ -1,10 +1,4 @@
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.csproj.AssemblyReference.cache
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.AssemblyInfoInputs.cache
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.AssemblyInfo.cs
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.csproj.CoreCompileInputs.cache
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.MvcApplicationPartsAssemblyInfo.cs
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\animalrescue.defaulttheme.staticwebassets.runtime.json
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\animalrescue.defaulttheme.exe
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\animalrescue.defaulttheme.deps.json
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\animalrescue.defaulttheme.runtimeconfig.json
@@ -63,6 +57,15 @@ C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\ru
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.csproj.AssemblyReference.cache
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.AssemblyInfoInputs.cache
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.AssemblyInfo.cs
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.csproj.CoreCompileInputs.cache
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.RazorAssemblyInfo.cache
+C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.RazorAssemblyInfo.cs
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\staticwebassets.build.json
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\staticwebassets.development.json
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\scopedcss\bundle\animalrescue.defaulttheme.styles.css
@@ -72,6 +75,3 @@ C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\re
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.pdb
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.genruntimeconfig.cache
 C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\ref\animalrescue.defaulttheme.dll
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\bin\Debug\net6.0\animalrescue.defaulttheme.staticwebassets.runtime.json
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.RazorAssemblyInfo.cache
-C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\obj\Debug\net6.0\animalrescue.defaulttheme.RazorAssemblyInfo.cs
