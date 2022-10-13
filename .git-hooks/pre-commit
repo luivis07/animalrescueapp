@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+LC_ALL=C
+
+local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+valid_branch_regex="^((task|feature)(\/)([a-z0-9]{10,20})(\/)(issue-)[0-9]{1,5})|(develop|main)|(users)(\/)([a-z0-9]{10,20})(\/)[a-z0-9._-]{10,20}$"
+
+message="This branch violates the branch naming rules. Please rename your branch."
+
+if [[ ! $local_branch =~ $valid_branch_regex ]]
+then
+    echo "$message"
+    echo
+    echo "Valid branch names:"
+    echo
+    echo "feature/featurename/issue-[NUMBER]"
+    echo
+    echo "users/username/anything"
+    exit 1
+fi
+
+exit 0
