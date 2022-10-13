@@ -380,3 +380,5 @@ C:\Projects\orchardtest\src\animalrescue.web\obj\Debug\net6.0\refint\animalrescu
 C:\Projects\orchardtest\src\animalrescue.web\obj\Debug\net6.0\animalrescue.web.pdb
 C:\Projects\orchardtest\src\animalrescue.web\obj\Debug\net6.0\animalrescue.web.genruntimeconfig.cache
 C:\Projects\orchardtest\src\animalrescue.web\obj\Debug\net6.0\ref\animalrescue.web.dll
+C:\Projects\orchardtest\src\animalrescue.web\obj\Debug\net6.0\animalrescue.web.RazorAssemblyInfo.cache
+C:\Projects\orchardtest\src\animalrescue.web\obj\Debug\net6.0\animalrescue.web.RazorAssemblyInfo.cs

@@ -18,7 +18,20 @@
 </head>
 <body>
     <header>
-        <menu alias="alias:MainMenu" cache-id="MainMenu" cache-fixed-duration="00:05:00" cache-tag="alias:MainMenu"/>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" aria-label="Main">
+            <div class="container">
+                <a class="navbar-brand" href="#">Saving Sage</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExample07">
+                    <menu alias="alias:MainMenu" cache-id="MainMenu" cache-fixed-duration="00:05:00" cache-tag="alias:MainMenu"/>
+                    <form role="search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>    
+            </div>
+        </nav>
     </header>
     @await RenderSectionAsync("Header", required: false)
 

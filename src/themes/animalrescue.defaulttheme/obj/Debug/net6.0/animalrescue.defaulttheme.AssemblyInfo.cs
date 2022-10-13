@@ -11,13 +11,26 @@ using System;
 using System.Reflection;
 
 [assembly: OrchardCore.Modules.Manifest.ModuleMarkerAttribute("animalrescue.defaulttheme", "Theme")]
-[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\appsettings.Development.json|c:\\Projects\\orchardt" +
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\appsettings.Development.json|C:\\Projects\\orchardt" +
     "est\\src\\themes\\animalrescue.defaulttheme\\appsettings.Development.json")]
-[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\appsettings.json|c:\\Projects\\orchardtest\\src\\them" +
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\appsettings.json|C:\\Projects\\orchardtest\\src\\them" +
     "es\\animalrescue.defaulttheme\\appsettings.json")]
-[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\Layout.cshtml|c:\\Projects\\orchardtest\\src\\t" +
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\Layout.cshtml|C:\\Projects\\orchardtest\\src\\t" +
     "hemes\\animalrescue.defaulttheme\\Views\\Layout.cshtml")]
-[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\_ViewImports.cshtml|c:\\Projects\\orchardtest" +
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\Menu.cshtml|C:\\Projects\\orchardtest\\src\\the" +
+    "mes\\animalrescue.defaulttheme\\Views\\Menu.cshtml")]
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\MenuItem.cshtml|C:\\Projects\\orchardtest\\src" +
+    "\\themes\\animalrescue.defaulttheme\\Views\\MenuItem.cshtml")]
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\MenuItemLink-ContentMenuItem.cshtml|C:\\Proj" +
+    "ects\\orchardtest\\src\\themes\\animalrescue.defaulttheme\\Views\\MenuItemLink-Content" +
+    "MenuItem.cshtml")]
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\MenuItemLink-HtmlMenuItem.cshtml|C:\\Project" +
+    "s\\orchardtest\\src\\themes\\animalrescue.defaulttheme\\Views\\MenuItemLink-HtmlMenuIt" +
+    "em.cshtml")]
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\MenuItemLink-LinkMenuItem.cshtml|C:\\Project" +
+    "s\\orchardtest\\src\\themes\\animalrescue.defaulttheme\\Views\\MenuItemLink-LinkMenuIt" +
+    "em.cshtml")]
+[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.defaulttheme\\Views\\_ViewImports.cshtml|C:\\Projects\\orchardtest" +
     "\\src\\themes\\animalrescue.defaulttheme\\Views\\_ViewImports.cshtml")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("animalrescue.defaulttheme")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
