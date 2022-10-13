@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)orchardcore.application.targets\1.4.0\build\OrchardCore.Application.Targets.targets" Condition="Exists('$(NuGetPackageRoot)orchardcore.application.targets\1.4.0\build\OrchardCore.Application.Targets.targets')" />
-    <Import Project="$(NuGetPackageRoot)orchardcore.application.cms.core.targets\1.4.0\build\OrchardCore.Application.Cms.Core.Targets.targets" Condition="Exists('$(NuGetPackageRoot)orchardcore.application.cms.core.targets\1.4.0\build\OrchardCore.Application.Cms.Core.Targets.targets')" />
-  </ImportGroup>
-</Project>
