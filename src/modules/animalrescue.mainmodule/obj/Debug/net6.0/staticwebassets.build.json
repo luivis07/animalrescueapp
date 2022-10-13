@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "Y2TawnBXS8m69bFV36dd996VohBhwWv1TMDEYDaa/FU=",
+  "Source": "animalrescue.mainmodule",
+  "BasePath": "_content/animalrescue.mainmodule",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "animalrescue.mainmodule\\wwwroot",
+      "Source": "animalrescue.mainmodule",
+      "ContentRoot": "C:\\Projects\\orchardtest\\src\\modules\\animalrescue.mainmodule\\wwwroot\\",
+      "BasePath": "_content/animalrescue.mainmodule",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

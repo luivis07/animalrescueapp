@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "Hash": "+/0wiwUobYXTA7Tu8tYUbBtma4Hzxd79XUmyWXi7cBw=",
+  "Source": "animalrescue.web",
+  "BasePath": "_content/animalrescue.web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Projects\\orchardtest\\src\\modules\\animalrescue.mainmodule\\animalrescue.mainmodule.csproj",
+      "Version": 2,
+      "Source": "animalrescue.mainmodule",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    },
+    {
+      "Identity": "C:\\Projects\\orchardtest\\src\\themes\\animalrescue.defaulttheme\\animalrescue.defaulttheme.csproj",
+      "Version": 2,
+      "Source": "animalrescue.defaulttheme",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "animalrescue.defaulttheme\\wwwroot",
+      "Source": "animalrescue.defaulttheme",
+      "ContentRoot": "C:\\Projects\\orchardtest\\src\\themes\\animalrescue.defaulttheme\\wwwroot\\",
+      "BasePath": "_content/animalrescue.defaulttheme",
+      "Pattern": "**"
+    },
+    {
+      "Name": "animalrescue.mainmodule\\wwwroot",
+      "Source": "animalrescue.mainmodule",
+      "ContentRoot": "C:\\Projects\\orchardtest\\src\\modules\\animalrescue.mainmodule\\wwwroot\\",
+      "BasePath": "_content/animalrescue.mainmodule",
+      "Pattern": "**"
+    },
+    {
+      "Name": "animalrescue.web\\wwwroot",
+      "Source": "animalrescue.web",
+      "ContentRoot": "C:\\Projects\\orchardtest\\src\\animalrescue.web\\wwwroot\\",
+      "BasePath": "_content/animalrescue.web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Projects\\orchardtest\\src\\animalrescue.web\\wwwroot\\.placeholder",
+      "SourceId": "animalrescue.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\orchardtest\\src\\animalrescue.web\\wwwroot\\",
+      "BasePath": "_content/animalrescue.web",
+      "RelativePath": ".placeholder",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\.placeholder"
+    }
+  ]
+}
