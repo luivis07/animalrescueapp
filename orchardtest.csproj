@@ -5,6 +5,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="*"/>
+    <PackageReference Include="OrchardCore.Application.Cms.Core.Targets" Version="1.4.0"/>
   </ItemGroup>
 </Project>
