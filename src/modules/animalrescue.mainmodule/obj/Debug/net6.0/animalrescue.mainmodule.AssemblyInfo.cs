@@ -17,12 +17,8 @@ using System.Reflection;
     "s\\animalrescue.mainmodule\\appsettings.json")]
 [assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.mainmodule\\Views\\Home\\Index.cshtml|C:\\Projects\\orchardtest\\src" +
     "\\modules\\animalrescue.mainmodule\\Views\\Home\\Index.cshtml")]
-[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.mainmodule\\Views\\Shared\\_Layout.cshtml|C:\\Projects\\orchardtest" +
-    "\\src\\modules\\animalrescue.mainmodule\\Views\\Shared\\_Layout.cshtml")]
 [assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.mainmodule\\Views\\_ViewImports.cshtml|C:\\Projects\\orchardtest\\s" +
     "rc\\modules\\animalrescue.mainmodule\\Views\\_ViewImports.cshtml")]
-[assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.mainmodule\\Views\\_ViewStart.cshtml|C:\\Projects\\orchardtest\\src" +
-    "\\modules\\animalrescue.mainmodule\\Views\\_ViewStart.cshtml")]
 [assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.mainmodule\\wwwroot\\css\\site.css|C:\\Projects\\orchardtest\\src\\mo" +
     "dules\\animalrescue.mainmodule\\wwwroot\\css\\site.css")]
 [assembly: OrchardCore.Modules.Manifest.ModuleAssetAttribute("Areas\\animalrescue.mainmodule\\wwwroot\\js\\site.js|C:\\Projects\\orchardtest\\src\\modu" +

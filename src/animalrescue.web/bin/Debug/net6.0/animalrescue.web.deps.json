@@ -9,6 +9,7 @@
       "animalrescue.web/1.0.0": {
         "dependencies": {
           "OrchardCore.Application.Cms.Targets": "1.4.0",
+          "OrchardCore.Navigation.Core": "1.4.0",
           "animalrescue.defaulttheme": "1.0.0",
           "animalrescue.mainmodule": "1.0.0"
         },
@@ -5186,7 +5187,10 @@
       },
       "animalrescue.defaulttheme/1.0.0": {
         "dependencies": {
+          "OrchardCore.ContentManagement": "1.4.0",
           "OrchardCore.DisplayManagement": "1.4.0",
+          "OrchardCore.Menu": "1.4.0",
+          "OrchardCore.ResourceManagement": "1.4.0",
           "OrchardCore.Theme.Targets": "1.4.0"
         },
         "runtime": {
@@ -5195,7 +5199,10 @@
       },
       "animalrescue.mainmodule/1.0.0": {
         "dependencies": {
+          "OrchardCore.ContentFields": "1.4.0",
+          "OrchardCore.ContentManagement": "1.4.0",
           "OrchardCore.DisplayManagement": "1.4.0",
+          "OrchardCore.Infrastructure": "1.4.0",
           "OrchardCore.Module.Targets": "1.4.0"
         },
         "runtime": {

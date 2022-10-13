@@ -1,6 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOrchardCms();
+builder.Services.AddOrchardCms()
+                .AddSetupFeatures("OrchardCore.AutoSetup");
 
 var app = builder.Build();
 

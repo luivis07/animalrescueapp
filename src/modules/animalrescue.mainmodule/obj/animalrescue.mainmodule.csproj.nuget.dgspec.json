@@ -41,7 +41,19 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "OrchardCore.ContentFields": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "OrchardCore.ContentManagement": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
             "OrchardCore.DisplayManagement": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "OrchardCore.Infrastructure": {
               "target": "Package",
               "version": "[1.4.0, )"
             },

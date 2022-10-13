@@ -8,17 +8,17 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = animalrescue.defaulttheme
 build_property.RootNamespace = animalrescue.defaulttheme
-build_property.ProjectDir = C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\
+build_property.ProjectDir = c:\Projects\orchardtest\src\themes\animalrescue.defaulttheme\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Projects\orchardtest\src\themes\animalrescue.defaulttheme
+build_property.MSBuildProjectDirectory = c:\Projects\orchardtest\src\themes\animalrescue.defaulttheme
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Projects/orchardtest/src/themes/animalrescue.defaulttheme/Views/Layout.cshtml]
+[c:/Projects/orchardtest/src/themes/animalrescue.defaulttheme/Views/Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/orchardtest/src/themes/animalrescue.defaulttheme/Views/_ViewImports.cshtml]
+[c:/Projects/orchardtest/src/themes/animalrescue.defaulttheme/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
