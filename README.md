@@ -17,6 +17,9 @@
   - `dotnet build .\animalrescue.sln`
   - `dotnet run --project .\src\animalrescue.web\animalrescue.web.csproj`
 
+- CI/CD:
+  - Configured to deploy to https://sageanimalrescue.azurewebsites.net/ from `main` only
+
 - Help
   - UI
     - Code samples for UI components can be found here:
