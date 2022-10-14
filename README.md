@@ -10,7 +10,7 @@
 - Setup
   - Projects
     - animalrescue.web - FrontEnd
-    - animalrescue.mainmodule - Middle Layer (future use as of now)
+    - animalrescue.mainmodule - Middle Layer
     - animalrescue.defaulttheme - Holds custom theme for app
 
 - To Build/Run:
