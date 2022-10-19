@@ -6,10 +6,14 @@
   - Download Net 6.0 SDK
   - Visual Studio Code
   - Git Bash
+  - Powershell (latest version)
 
 - Setup
   - VS Code Extensions:
     - Azure Account
+  - Powershell
+    - AZ Module
+    - Azure CLI
   - Projects
     - animalrescue.web - FrontEnd
     - animalrescue.mainmodule - Middle Layer
