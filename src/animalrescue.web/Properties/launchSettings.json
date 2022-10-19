@@ -14,7 +14,8 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7261;http://localhost:5281",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AZURE_TENANT_ID":"c8d72b01-cbee-485a-8bb9-9fab43c05fd4"
       }
     },
     "IIS Express": {

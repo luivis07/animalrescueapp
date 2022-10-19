@@ -5,7 +5,7 @@ namespace animalrescue.web
 {
     [Route("/[controller]/[action]")]
     public class HomeController : Controller
-    {
+    {        
         [Route("/")]
         [Route("/home")]
         [Route("/home/index")]
