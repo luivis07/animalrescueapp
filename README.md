@@ -8,6 +8,8 @@
   - Git Bash
 
 - Setup
+  - VS Code Extensions:
+    - Azure Account
   - Projects
     - animalrescue.web - FrontEnd
     - animalrescue.mainmodule - Middle Layer
