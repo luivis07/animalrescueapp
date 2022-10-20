@@ -17,7 +17,11 @@ namespace animalrescue.web
         {
             return View();
         }
-         public IActionResult Sponsors()
+        public IActionResult Sponsors()
+        {
+            return View();
+        }
+        public IActionResult MeetOurAnimals()
         {
             return View();
         }
