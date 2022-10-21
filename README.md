@@ -31,7 +31,7 @@
 - Help
   - UI
     - Code samples for UI components can be found here:
-    - https://getbootstrap.com/docs/5.2/examples/cheatsheet/
+    - https://getbootstrap.com/docs/5.0/examples/cheatsheet/
   - OrchardCore
     - https://orcharddojo.net/orchard-training/dojo-course-3-the-full-orchard-core-tutorial
     - https://www.youtube.com/playlist?list=PLuskKJW0FhJcSX7j0Bd-1X5hq3dgCtYwO
