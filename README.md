@@ -20,6 +20,8 @@
     - animalrescue.defaulttheme - Holds custom theme for app
 
 - To Build/Run:
+  - sign-in to azure from VS code using the extension mentioned above (Azure Account)
+    - Note: you don't need to do this all the time but at least once first time running the app and after if your session expires
   - `dotnet build .\animalrescue.sln`
   - `dotnet run --project .\src\animalrescue.web\animalrescue.web.csproj`
 
