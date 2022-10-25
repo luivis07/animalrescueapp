@@ -5,7 +5,7 @@ namespace animalrescue.web
 {
     [Route("/[controller]/[action]")]
     public class HomeController : Controller
-    {
+    {        
         [Route("/")]
         [Route("/home")]
         [Route("/home/index")]
@@ -14,6 +14,10 @@ namespace animalrescue.web
             return View();
         }
         public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult Sponsors()
         {
             return View();
         }

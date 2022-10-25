@@ -1,8 +1,9 @@
 @{
     int level = (int)Model.Level;
     TagBuilder tag = Tag(Model, "li");
+    tag.AddCssClass("nav-item");
 
-    TagBuilder parentTag = null;
+    TagBuilder? parentTag = null;
     if ((bool)Model.HasItems)
     {
         tag.AddCssClass("dropdown");

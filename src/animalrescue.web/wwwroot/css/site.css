@@ -1,0 +1,38 @@
+/*
+    custom classes
+*/
+div.ssar-link-group a {
+    color: #fff;
+    text-decoration: none;
+}
+
+div.ssar-link-group a:hover {
+    text-decoration: none;
+}
+
+/*
+    carousel custom
+*/
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.carousel-control-next{
+    margin-right: -100px;
+}
+
+.carousel-control-prev{
+    margin-left: -100px;
+}
+
+.carousel .carousel-indicators button {  
+    background-color: gray; 
+}
+.carousel .carousel-indicators button.active { 
+    background-color: invert(100%); 
+}
+
+.carousel .border {
+    padding: 30px;
+}

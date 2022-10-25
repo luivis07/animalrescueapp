@@ -12,32 +12,41 @@
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
     @await RenderSectionAsync("HeadMeta", required: false)
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" aria-label="Main">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="#">Saving Sage</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarsExample07"></div>
-                    <menu alias="alias:MainMenu" cache-id="MainMenu" cache-fixed-duration="00:05:00" cache-tag="alias:MainMenu"/>
-                    <form role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <menu alias="alias:MainMenu" cache-id="MainMenu" cache-fixed-duration="00:05:00"
+                        cache-tag="alias:MainMenu" />
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
                     </form>
-                </div>    
+                </div>
             </div>
         </nav>
     </header>
+
+
     @await RenderSectionAsync("Header", required: false)
 
     <main role="main" class="container">
         @await RenderSectionAsync("Messages", required: false)
-        
+
         @await RenderBodyAsync()
     </main>
 
@@ -59,6 +68,8 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
