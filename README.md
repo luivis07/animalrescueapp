@@ -15,13 +15,13 @@
     - AZ Module
     - Azure CLI
   - Projects
-    - animalrescue.web - FrontEnd
-    - animalrescue.mainmodule - Middle Layer
-    - animalrescue.defaulttheme - Holds custom theme for app
+    - animalrescue.web - CMS-Front End
+    - animalrescue.mainmodule - User Management
+    - animalrescue.defaulttheme - Custom Theme for CMS 
 
 - To Build/Run:
   - sign-in to azure from VS code using the extension mentioned above (Azure Account)
-    - Note: you don't need to do this all the time but at least once first time running the app and after if your session expires
+    - Note: you don't need to do this all the time but at least once the first time running the app and after if your session expires
   - `dotnet build .\animalrescue.sln`
   - `dotnet run --project .\src\animalrescue.web\animalrescue.web.csproj`
 
