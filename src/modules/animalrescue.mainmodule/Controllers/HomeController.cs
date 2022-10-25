@@ -21,5 +21,9 @@ namespace animalrescue.web
         {
             return View();
         }
+        public IActionResult Leadership()
+        {
+            return View();
+        }
     }
 }
