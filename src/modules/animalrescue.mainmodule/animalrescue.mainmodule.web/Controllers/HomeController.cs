@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace animalrescue.web
+namespace animalrescue.mainmodule.web
 {
     [Route("/[controller]/[action]")]
     public class HomeController : Controller

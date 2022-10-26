@@ -1,9 +1,12 @@
+using animalrescue.mainmodule.web.setup;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using OrchardCore.Environment.Shell.Configuration;
 using OrchardCore.Media.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddOrchardCms()
                 .ConfigureServices((tenantServices, serviceProvider) =>
@@ -24,6 +27,8 @@ builder.Services.AddOrchardCms()
                     });
                 })
                 .AddSetupFeatures("OrchardCore.AutoSetup");
+
+builder.Services.RegisterModule();
 
 var app = builder.Build();
 
