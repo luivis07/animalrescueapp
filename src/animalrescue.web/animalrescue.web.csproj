@@ -11,9 +11,10 @@
   <ItemGroup>
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.4.0"/>
     <PackageReference Include="OrchardCore.Navigation.Core" Version="1.4.0"/>
+    <PackageReference Include="AutoMapper" Version="12.0.0"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\modules\animalrescue.mainmodule\animalrescue.mainmodule.csproj"/>
+    <ProjectReference Include="..\modules\animalrescue.mainmodule\animalrescue.mainmodule.web\animalrescue.mainmodule.web.csproj"/>
     <ProjectReference Include="..\themes\animalrescue.defaulttheme\animalrescue.defaulttheme.csproj"/>
   </ItemGroup>
 </Project>

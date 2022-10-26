@@ -9,11 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.web", "src\ani
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule", "src\modules\animalrescue.mainmodule\animalrescue.mainmodule.csproj", "{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.web", "src\modules\animalrescue.mainmodule\animalrescue.mainmodule.web\animalrescue.mainmodule.web.csproj", "{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "themes", "themes", "{8C3D25B9-A175-49C8-8827-47C63C637575}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.defaulttheme", "src\themes\animalrescue.defaulttheme\animalrescue.defaulttheme.csproj", "{298AC011-694E-4F5A-964A-4B9088DC87D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "animalrescue.mainmodule", "animalrescue.mainmodule", "{E1F8BAFB-09CA-4B93-909F-68A5A541340C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.dal", "src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj", "{5973FAE8-2DC8-4754-91B7-2D355C41015A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.services", "src\modules\animalrescue.mainmodule\animalrescue.mainmodule.services\animalrescue.mainmodule.services.csproj", "{68B0AD7A-4014-4770-BBE1-86CFF252EB80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +42,14 @@ Global
 		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{298AC011-694E-4F5A-964A-4B9088DC87D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5973FAE8-2DC8-4754-91B7-2D355C41015A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5973FAE8-2DC8-4754-91B7-2D355C41015A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5973FAE8-2DC8-4754-91B7-2D355C41015A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5973FAE8-2DC8-4754-91B7-2D355C41015A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB5E41C4-6705-4C08-AA55-EDEEEC611963} = {80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}
@@ -43,5 +57,8 @@ Global
 		{51763F34-FFC8-41D2-A0A4-6AC6C9B034B0} = {4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B}
 		{8C3D25B9-A175-49C8-8827-47C63C637575} = {80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}
 		{298AC011-694E-4F5A-964A-4B9088DC87D6} = {8C3D25B9-A175-49C8-8827-47C63C637575}
+		{E1F8BAFB-09CA-4B93-909F-68A5A541340C} = {4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B}
+		{5973FAE8-2DC8-4754-91B7-2D355C41015A} = {E1F8BAFB-09CA-4B93-909F-68A5A541340C}
+		{68B0AD7A-4014-4770-BBE1-86CFF252EB80} = {E1F8BAFB-09CA-4B93-909F-68A5A541340C}
 	EndGlobalSection
 EndGlobal
