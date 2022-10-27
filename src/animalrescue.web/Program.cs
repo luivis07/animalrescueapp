@@ -5,6 +5,9 @@ using OrchardCore.Environment.Shell.Configuration;
 using OrchardCore.Media.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
+var env = builder.Environment;
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -27,6 +30,11 @@ builder.Services.AddOrchardCms()
                     });
                 })
                 .AddSetupFeatures("OrchardCore.AutoSetup");
+                
+if(env.IsProduction())
+    builder.Services.RegisterModuleProd();
+else
+    builder.Services.RegisterModuleLocal();
 
 builder.Services.RegisterModule();
 
