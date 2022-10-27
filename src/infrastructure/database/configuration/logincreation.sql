@@ -1,0 +1,1 @@
+CREATE LOGIN animalrescueadmin WITH PASSWORD = 'PASSWORD_GOES_HERE';
