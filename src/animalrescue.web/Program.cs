@@ -36,8 +36,6 @@ if(env.IsProduction())
 else
     builder.Services.RegisterModuleLocal();
 
-builder.Services.RegisterModule();
-
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
