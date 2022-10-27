@@ -7,11 +7,22 @@ namespace animalrescue.mainmodule.services.setup
 {
     public static class RegistrationExtensions
     {
-        public static IServiceCollection RegisterServices(this IServiceCollection serviceColletion)
+        public static IServiceCollection RegisterServicesProd(this IServiceCollection serviceCollection)
         {
-            serviceColletion = serviceColletion.RegisterDal();
-            serviceColletion.AddScoped<IVolunteerApplicationHandler, VolunteerApplicationHandler>();
-            return serviceColletion;
+            serviceCollection.RegisterDalProd();
+            serviceCollection.RegisterOthers();
+            return serviceCollection;
+        }
+        public static IServiceCollection RegisterServicesLocal(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.RegisterDalLocal();
+            serviceCollection.RegisterOthers();
+            return serviceCollection;
+        }
+        private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<IVolunteerApplicationHandler, VolunteerApplicationHandler>();
+            return serviceCollection;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace animalrescue.mainmodule.dal.Migrations
+namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

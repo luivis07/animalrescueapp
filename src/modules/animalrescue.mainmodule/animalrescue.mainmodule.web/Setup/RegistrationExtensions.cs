@@ -7,10 +7,19 @@ namespace animalrescue.mainmodule.web.setup
 {
     public static class RegistrationExtensions
     {
-        public static IServiceCollection RegisterModule(this IServiceCollection serviceColletion)
+        public static IServiceCollection RegisterModuleLocal(this IServiceCollection serviceCollection)
         {
-            serviceColletion = serviceColletion.RegisterServices();
-            return serviceColletion;
+            serviceCollection.RegisterServicesLocal();
+            return serviceCollection;
+        }
+        public static IServiceCollection RegisterModuleProd(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.RegisterServicesProd();
+            return serviceCollection;
+        }
+        private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
+        {
+            return serviceCollection;
         }
     }
 }
