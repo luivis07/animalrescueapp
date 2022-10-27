@@ -25,6 +25,17 @@
   - `dotnet build .\animalrescue.sln`
   - `dotnet run --project .\src\animalrescue.web\animalrescue.web.csproj`
 
+- EF Migrations:
+  - The commands below need to be execueted at the root level of the application
+  - Install dotnet EF tool:
+    - `dotnet tool uninstall dotnet-ef --global`
+  - Development (local environment)
+    - `$env:ASPNETCORE_ENVIRONMENT="Development"`
+    - `dotnet ef migrations add InitialCreate --context LocalAnimalRescueContext --output-dir Migrations/SqliteMigrations --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj`
+  - Production (sql server db)
+    - `$env:ASPNETCORE_ENVIRONMENT="Production"`
+    - `dotnet ef migrations add InitialCreate --context AnimalRescueContext --output-dir Migrations/SqlServerMigrations --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj`
+
 - CI/CD:
   - Configured to deploy to https://sageanimalrescue.azurewebsites.net/ from `main` only
 

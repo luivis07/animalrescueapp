@@ -9,6 +9,8 @@ var env = builder.Environment;
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddOrchardCms()
                 .ConfigureServices((tenantServices, serviceProvider) =>
                 {
@@ -33,6 +35,8 @@ if(env.IsProduction())
     builder.Services.RegisterModuleProd();
 else
     builder.Services.RegisterModuleLocal();
+
+builder.Services.RegisterModule();
 
 var app = builder.Build();
 

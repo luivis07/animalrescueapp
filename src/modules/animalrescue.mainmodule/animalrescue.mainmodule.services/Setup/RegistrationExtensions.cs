@@ -7,6 +7,7 @@ namespace animalrescue.mainmodule.services.setup
 {
     public static class RegistrationExtensions
     {
+<<<<<<< HEAD
         public static IServiceCollection RegisterServicesProd(this IServiceCollection serviceCollection)
         {
             serviceCollection.RegisterDalProd();
@@ -23,6 +24,13 @@ namespace animalrescue.mainmodule.services.setup
         {
             serviceCollection.AddScoped<IVolunteerApplicationHandler, VolunteerApplicationHandler>();
             return serviceCollection;
+=======
+        public static IServiceCollection RegisterServices(this IServiceCollection serviceColletion)
+        {
+            serviceColletion = serviceColletion.RegisterDal();
+            serviceColletion.AddScoped<IVolunteerApplicationHandler, VolunteerApplicationHandler>();
+            return serviceColletion;
+>>>>>>> main
         }
     }
 }
