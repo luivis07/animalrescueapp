@@ -7,7 +7,6 @@ namespace animalrescue.mainmodule.web.setup
 {
     public static class RegistrationExtensions
     {
-<<<<<<< HEAD
         public static IServiceCollection RegisterModuleLocal(this IServiceCollection serviceCollection)
         {
             serviceCollection.RegisterServicesLocal();
@@ -21,12 +20,6 @@ namespace animalrescue.mainmodule.web.setup
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
             return serviceCollection;
-=======
-        public static IServiceCollection RegisterModule(this IServiceCollection serviceColletion)
-        {
-            serviceColletion = serviceColletion.RegisterServices();
-            return serviceColletion;
->>>>>>> main
         }
     }
 }
