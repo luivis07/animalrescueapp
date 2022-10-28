@@ -32,14 +32,62 @@ namespace animalrescue.mainmodule.dal
                 .WithOne(arar => arar.AnimalRescueAccount)
                 .HasForeignKey(ara => ara.AnimalRescueAccountId);
 
+            modelBuilder.Entity<AnimalRescueAccount>()
+                .HasMany(ara => ara.AnimalRescueAccountLocations)
+                .WithOne(aral => aral.AnimalRescueAccount)
+                .HasForeignKey(ara => ara.AnimalRescueAccountId);
+
             /*Role*/    
             modelBuilder.Entity<Role>()
                 .HasMany(r => r.AnimalRescueAccountRoles)
                 .WithOne(arar => arar.Role)
                 .HasForeignKey(r => r.RoleId);
+
+            /*Location*/    
+            modelBuilder.Entity<Location>()
+                .HasMany(l => l.AnimalRescueAccountLocations)
+                .WithOne(aral => aral.Location)
+                .HasForeignKey(l => l.LocationId);
+            
+            modelBuilder.Entity<Location>()
+                .HasMany(l => l.LocationCalendars)
+                .WithOne(lc => lc.Location)
+                .HasForeignKey(l => l.LocationId);
+            
+            /*Calendar*/
+            modelBuilder.Entity<Calendar>()
+                .HasOne(c => c.CalendarType)
+                .WithMany(ct => ct.Calendar)
+                .HasForeignKey(c => c.CalendarTypeId);
+
+            modelBuilder.Entity<Calendar>()
+                .HasOne(c => c.LocationCalendar)
+                .WithMany(lc => lc.Calendar)
+                .HasForeignKey(c => c.Id);
+
+            modelBuilder.Entity<Calendar>()
+                .HasMany(c => c.Events)
+                .WithOne(e => e.Calendar)
+                .HasForeignKey(c => c.CalendarId);
+
+            /*Event*/
+            modelBuilder.Entity<Event>()
+                .HasOne(e => e.Calendar)
+                .WithMany(c => c.Events)    
+                .HasForeignKey(e => e.CalendarId);
+
             /*AnimalRescueAccountRole*/
             modelBuilder.Entity<AnimalRescueAccountRole>()
                 .HasKey(arar => new{arar.AnimalRescueAccountId,arar.RoleId});
+            
+            /*AnimalRescueAccountLocation*/
+            modelBuilder.Entity<AnimalRescueAccountLocation>()
+                .HasKey(aral => new{aral.AnimalRescueAccountId,aral.LocationId});
+
+            /*LocationCalendar*/
+            modelBuilder.Entity<LocationCalendar>()
+                .HasKey(lc => new{lc.LocationId,lc.CalendarId});
+
             base.OnModelCreating(modelBuilder);
         }
     }
