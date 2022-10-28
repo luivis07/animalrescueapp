@@ -3,10 +3,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <MpaRoot>ClientApp\</MpaRoot>
+    <WWWRoot>wwwroot\</WWWRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(MpaRoot)node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\"/>
     <Folder Include="Localization\"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="$(MpaRoot)**"/>
+    <None Remove="$(MpaRoot)**"/>
+    <None Include="$(MpaRoot)**" Exclude="$(MpaRoot)node_modules\**"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.4.0"/>
@@ -17,4 +26,36 @@
     <ProjectReference Include="..\modules\animalrescue.mainmodule\animalrescue.mainmodule.web\animalrescue.mainmodule.web.csproj"/>
     <ProjectReference Include="..\themes\animalrescue.defaulttheme\animalrescue.defaulttheme.csproj"/>
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="$(MpaRoot)**"/>
+    <None Remove="$(MpaRoot)**"/>
+    <None Include="$(MpaRoot)**" Exclude="$(MpaRoot)node_modules\**"/>
+  </ItemGroup>
+  <Target Name="NpmInstall" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(MpaRoot)node_modules') ">
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+    <Exec WorkingDirectory="$(MpaRoot)" Command="npm install"/>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE."/>
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..."/>
+  </Target>
+  <Target Name="NpmRunBuild" BeforeTargets="Build" DependsOnTargets="NpmInstall">
+    <Exec WorkingDirectory="$(MpaRoot)" Command="npm run build"/>
+  </Target>
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <Exec WorkingDirectory="$(MpaRoot)" Command="npm install"/>
+    <Exec WorkingDirectory="$(MpaRoot)" Command="npm run build"/>
+    <ItemGroup>
+      <DistFiles Include="$(WWWRoot)dist\**"/>
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+  <Target Name="NpmClean" BeforeTargets="Clean">
+    <RemoveDir Directories="$(WWWRoot)dist"/>
+    <RemoveDir Directories="$(MpaRoot)node_modules"/>
+  </Target>
 </Project>

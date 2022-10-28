@@ -7,6 +7,7 @@
   - Visual Studio Code
   - Git Bash
   - Powershell (latest version)
+  - node JS (make sure to install LTS version)
 
 - Setup
   - VS Code Extensions:
