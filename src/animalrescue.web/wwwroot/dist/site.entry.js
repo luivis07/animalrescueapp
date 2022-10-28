@@ -21646,8 +21646,6 @@ __webpack_require__.r(__webpack_exports__);
 (function($){
     $(".ssar-link-group").addClass("row text-center");
 })(jQuery)
-
-console.log('The \'site\' bundle has been loaded!');
 })();
 
 /******/ })()
