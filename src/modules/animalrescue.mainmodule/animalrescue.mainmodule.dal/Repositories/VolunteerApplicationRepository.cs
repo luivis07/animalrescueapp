@@ -17,7 +17,7 @@ namespace animalrescue.mainmodule.dal.repositories
 
         public IEnumerable<VolunteerApplication> GetVolunteerApplications()
         {
-            return animalRescueContext.VolunteerApplications.ToList();
+            return animalRescueContext.VolunteerApplication.ToList();
         }
     }
 }
