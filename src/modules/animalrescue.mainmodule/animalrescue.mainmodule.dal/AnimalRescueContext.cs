@@ -13,7 +13,16 @@ namespace animalrescue.mainmodule.dal
         public DbSet<VolunteerApplication> VolunteerApplication {get; set;}
         public DbSet<AdoptionApplication> AdoptionApplication {get; set;}
         public DbSet<AnimalRescueAccount> AnimalRescueAccount {get; set;}
+        public DbSet<AnimalRescueAccountAdoptionApplication> AnimalRescueAccountAdoptionApplication {get; set;}
+        public DbSet<AnimalRescueAccountFosterApplication> AnimalRescueAccountFosterApplication {get; set;}
+        public DbSet<AnimalRescueAccountLocation> AnimalRescueAccountLocation {get; set;}
         public DbSet<AnimalRescueAccountRole> AnimalRescueAccountRole {get; set;}
+        public DbSet<AnimalRescueAccountVolunteerApplication> AnimalRescueAccountVolunteerApplication {get; set;}
+        public DbSet<Calendar> Calendar {get; set;}
+        public DbSet<CalendarType> CalendarType {get; set;}
+        public DbSet<Event> Event {get; set;}
+        public DbSet<Location> Location {get; set;}
+        public DbSet<LocationCalendar> LocationCalendar {get; set;}
         public DbSet<Role> Role {get; set;}
 
         public AnimalRescueContext(IConfiguration configuration)
@@ -57,7 +66,7 @@ namespace animalrescue.mainmodule.dal
             /*Calendar*/
             modelBuilder.Entity<Calendar>()
                 .HasOne(c => c.CalendarType)
-                .WithMany(ct => ct.Calendar)
+                .WithMany(ct => ct.Calendars)
                 .HasForeignKey(c => c.CalendarTypeId);
 
             modelBuilder.Entity<Calendar>()
@@ -65,16 +74,29 @@ namespace animalrescue.mainmodule.dal
                 .WithMany(lc => lc.Calendar)
                 .HasForeignKey(c => c.Id);
 
-            modelBuilder.Entity<Calendar>()
-                .HasMany(c => c.Events)
-                .WithOne(e => e.Calendar)
-                .HasForeignKey(c => c.CalendarId);
-
             /*Event*/
             modelBuilder.Entity<Event>()
                 .HasOne(e => e.Calendar)
                 .WithMany(c => c.Events)    
                 .HasForeignKey(e => e.CalendarId);
+
+            /*AnimalRescueAccountVolunteerApplication*/
+            modelBuilder.Entity<AnimalRescueAccountVolunteerApplication>()
+                .HasOne<AnimalRescueAccount>(aravp => aravp.AnimalRescueAccount)
+                .WithOne(ara => ara.AnimalRescueAccountVolunteerApplication)
+                .HasForeignKey<AnimalRescueAccountVolunteerApplication>(aravp => aravp.AnimalRescueAccountId);
+            
+            /*AnimalRescueAccountFosterApplication*/
+            modelBuilder.Entity<AnimalRescueAccountFosterApplication>()
+                .HasOne<AnimalRescueAccount>(arafp => arafp.AnimalRescueAccount)
+                .WithOne(ara => ara.AnimalRescueAccountFosterApplication)
+                .HasForeignKey<AnimalRescueAccountFosterApplication>(arafp => arafp.AnimalRescueAccountId);
+
+            /*AnimalRescueAccountAdoptionApplication*/
+            modelBuilder.Entity<AnimalRescueAccountAdoptionApplication>()
+                .HasOne(araaa => araaa.AnimalRescueAccount)
+                .WithMany(ara => ara.AnimalRescueAccountAdoptionApplications)
+                .HasForeignKey(araaa => araaa.AnimalRescueAccountId);
 
             /*AnimalRescueAccountRole*/
             modelBuilder.Entity<AnimalRescueAccountRole>()

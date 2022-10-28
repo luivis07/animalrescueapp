@@ -10,5 +10,6 @@ namespace animalrescue.mainmodule.dal.models
         public int CalendarTypeId {get;set;}
         public virtual CalendarType CalendarType {get; set;}
         public virtual LocationCalendar LocationCalendar {get; set;}
+        public virtual IEnumerable<Event> Events {get;set;}
     }
 }

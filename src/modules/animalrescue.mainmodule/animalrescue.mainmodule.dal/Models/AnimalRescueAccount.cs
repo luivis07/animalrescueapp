@@ -11,5 +11,8 @@ namespace animalrescue.mainmodule.dal.models
         public string FirstName {get; set;}
         public virtual IEnumerable<AnimalRescueAccountRole> AnimalRescueAccountRoles {get; set;}
         public virtual IEnumerable<AnimalRescueAccountLocation> AnimalRescueAccountLocations {get; set;}
+        public virtual AnimalRescueAccountVolunteerApplication AnimalRescueAccountVolunteerApplication { get; set; } 
+        public virtual AnimalRescueAccountFosterApplication AnimalRescueAccountFosterApplication { get; set; }  
+        public virtual IEnumerable<AnimalRescueAccountAdoptionApplication> AnimalRescueAccountAdoptionApplications { get; set; }   
     }
 }
