@@ -464,3 +464,4 @@ Localization
 **/is-cache*
 **/ms-cache*
 *.pwd
+**/wwwroot/dist
