@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Generate CSS and JS
-        working-directory: \src\animalrescue.web\ClientApp
+        working-directory: .\src\animalrescue.web\ClientApp
         run: |
          npm install
          npm run build
