@@ -17,5 +17,3 @@ import '../css/site.css';
 (function($){
     $(".ssar-link-group").addClass("row text-center");
 })(jQuery)
-
-console.log('The \'site\' bundle has been loaded!');

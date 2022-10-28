@@ -3,6 +3,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <MpaRoot>ClientApp\</MpaRoot>
+    <WWWRoot>wwwroot\</WWWRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(MpaRoot)node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\"/>

@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
@@ -14,18 +15,18 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader'],
             },
             {
                 test: /\.(scss)$/,
                 use: [{
-                    loader: 'style-loader', // inject CSS to page
+                    loader: MiniCssExtractPlugin.loader, // inject CSS to page
                 }, {
                     loader: 'css-loader', // translates CSS into CommonJS modules
                 }, {
                     loader: 'postcss-loader', // Run post css actions
                     options: {
-                        postcssOptions:{
+                        postcssOptions: {
                             plugins: function () { // post css plugins, can be exported to postcss.config.js
                                 return [
                                     require('precss'),
@@ -43,5 +44,10 @@ module.exports = {
                 type: 'asset'
             }
         ]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "site.css"
+        })
+    ]
 };
