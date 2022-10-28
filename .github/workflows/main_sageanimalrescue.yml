@@ -18,11 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up NPM
-        run: npm install
-      
-      - name: Generates client side
-        run: npm run build
+      - name: Generate CSS and JS
+        working-directory: $(Build.SourcesDirectory)/src/animalrescue.web/ClientApp
+        run: |
+         npm install
+         npm run build
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
