@@ -9,6 +9,6 @@ namespace animalrescue.mainmodule.dal.models
         public int Id {get; set;}
         public string Name {get; set;}
         public virtual IEnumerable<AnimalRescueAccountLocation> AnimalRescueAccountLocations {get; set;}
-        public virtual IEnumerable<LocationCalendar> LocationCalendars {get; set;}
+        public virtual IEnumerable<Calendar> Calendars {get; set;}
     }
 }

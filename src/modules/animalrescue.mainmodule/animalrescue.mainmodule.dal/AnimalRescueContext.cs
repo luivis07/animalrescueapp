@@ -11,7 +11,6 @@ namespace animalrescue.mainmodule.dal
         protected readonly IConfiguration configuration;
 
         public DbSet<VolunteerApplication> VolunteerApplication {get; set;}
-        public DbSet<AdoptionApplication> AdoptionApplication {get; set;}
         public DbSet<AnimalRescueAccount> AnimalRescueAccount {get; set;}
         public DbSet<AnimalRescueAccountAdoptionApplication> AnimalRescueAccountAdoptionApplication {get; set;}
         public DbSet<AnimalRescueAccountFosterApplication> AnimalRescueAccountFosterApplication {get; set;}
@@ -22,7 +21,6 @@ namespace animalrescue.mainmodule.dal
         public DbSet<CalendarType> CalendarType {get; set;}
         public DbSet<Event> Event {get; set;}
         public DbSet<Location> Location {get; set;}
-        public DbSet<LocationCalendar> LocationCalendar {get; set;}
         public DbSet<Role> Role {get; set;}
 
         public AnimalRescueContext(IConfiguration configuration)
@@ -58,11 +56,6 @@ namespace animalrescue.mainmodule.dal
                 .WithOne(aral => aral.Location)
                 .HasForeignKey(l => l.LocationId);
             
-            modelBuilder.Entity<Location>()
-                .HasMany(l => l.LocationCalendars)
-                .WithOne(lc => lc.Location)
-                .HasForeignKey(l => l.LocationId);
-            
             /*Calendar*/
             modelBuilder.Entity<Calendar>()
                 .HasOne(c => c.CalendarType)
@@ -70,9 +63,9 @@ namespace animalrescue.mainmodule.dal
                 .HasForeignKey(c => c.CalendarTypeId);
 
             modelBuilder.Entity<Calendar>()
-                .HasOne(c => c.LocationCalendar)
-                .WithMany(lc => lc.Calendar)
-                .HasForeignKey(c => c.Id);
+                .HasOne(c => c.Location)
+                .WithMany(lc => lc.Calendars)
+                .HasForeignKey(c => c.LocationId);
 
             /*Event*/
             modelBuilder.Entity<Event>()
@@ -105,10 +98,6 @@ namespace animalrescue.mainmodule.dal
             /*AnimalRescueAccountLocation*/
             modelBuilder.Entity<AnimalRescueAccountLocation>()
                 .HasKey(aral => new{aral.AnimalRescueAccountId,aral.LocationId});
-
-            /*LocationCalendar*/
-            modelBuilder.Entity<LocationCalendar>()
-                .HasKey(lc => new{lc.LocationId,lc.CalendarId});
 
             base.OnModelCreating(modelBuilder);
         }

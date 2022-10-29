@@ -8,8 +8,9 @@ namespace animalrescue.mainmodule.dal.models
     {
         public int Id {get; set;}
         public int CalendarTypeId {get;set;}
+        public int LocationId {get;set;}
         public virtual CalendarType CalendarType {get; set;}
-        public virtual LocationCalendar LocationCalendar {get; set;}
         public virtual IEnumerable<Event> Events {get;set;}
+        public virtual Location Location {get;set;}
     }
 }
