@@ -461,6 +461,7 @@ $RECYCLE.BIN/
 */[Bb]in/
 */[Oo]bj/
 Localization
-ms-cache
-is-cache
+**/is-cache*
+**/ms-cache*
 *.pwd
+**/wwwroot/dist
