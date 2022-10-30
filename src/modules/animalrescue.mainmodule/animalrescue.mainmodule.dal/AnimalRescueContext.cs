@@ -31,73 +31,7 @@ namespace animalrescue.mainmodule.dal
             => options.UseSqlServer(configuration.GetConnectionString("animalrescuedb"));
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*
-            AnimalRescueAccount
-            */
-            modelBuilder.Entity<AnimalRescueAccount>()
-                .HasMany(ara => ara.AnimalRescueAccountRoles)
-                .WithOne(arar => arar.AnimalRescueAccount)
-                .HasForeignKey(ara => ara.AnimalRescueAccountId);
-
-            modelBuilder.Entity<AnimalRescueAccount>()
-                .HasMany(ara => ara.AnimalRescueAccountLocations)
-                .WithOne(aral => aral.AnimalRescueAccount)
-                .HasForeignKey(ara => ara.AnimalRescueAccountId);
-
-            /*Role*/    
-            modelBuilder.Entity<Role>()
-                .HasMany(r => r.AnimalRescueAccountRoles)
-                .WithOne(arar => arar.Role)
-                .HasForeignKey(r => r.RoleId);
-
-            /*Location*/    
-            modelBuilder.Entity<Location>()
-                .HasMany(l => l.AnimalRescueAccountLocations)
-                .WithOne(aral => aral.Location)
-                .HasForeignKey(l => l.LocationId);
-            
-            /*Calendar*/
-            modelBuilder.Entity<Calendar>()
-                .HasOne(c => c.CalendarType)
-                .WithMany(ct => ct.Calendars)
-                .HasForeignKey(c => c.CalendarTypeId);
-
-            modelBuilder.Entity<Calendar>()
-                .HasOne(c => c.Location)
-                .WithMany(lc => lc.Calendars)
-                .HasForeignKey(c => c.LocationId);
-
-            /*Event*/
-            modelBuilder.Entity<Event>()
-                .HasOne(e => e.Calendar)
-                .WithMany(c => c.Events)    
-                .HasForeignKey(e => e.CalendarId);
-
-            /*AnimalRescueAccountVolunteerApplication*/
-            modelBuilder.Entity<AnimalRescueAccountVolunteerApplication>()
-                .HasOne<AnimalRescueAccount>(aravp => aravp.AnimalRescueAccount)
-                .WithOne(ara => ara.AnimalRescueAccountVolunteerApplication)
-                .HasForeignKey<AnimalRescueAccountVolunteerApplication>(aravp => aravp.AnimalRescueAccountId);
-            
-            /*AnimalRescueAccountFosterApplication*/
-            modelBuilder.Entity<AnimalRescueAccountFosterApplication>()
-                .HasOne<AnimalRescueAccount>(arafp => arafp.AnimalRescueAccount)
-                .WithOne(ara => ara.AnimalRescueAccountFosterApplication)
-                .HasForeignKey<AnimalRescueAccountFosterApplication>(arafp => arafp.AnimalRescueAccountId);
-
-            /*AnimalRescueAccountAdoptionApplication*/
-            modelBuilder.Entity<AnimalRescueAccountAdoptionApplication>()
-                .HasOne(araaa => araaa.AnimalRescueAccount)
-                .WithMany(ara => ara.AnimalRescueAccountAdoptionApplications)
-                .HasForeignKey(araaa => araaa.AnimalRescueAccountId);
-
-            /*AnimalRescueAccountRole*/
-            modelBuilder.Entity<AnimalRescueAccountRole>()
-                .HasKey(arar => new{arar.AnimalRescueAccountId,arar.RoleId});
-            
-            /*AnimalRescueAccountLocation*/
-            modelBuilder.Entity<AnimalRescueAccountLocation>()
-                .HasKey(aral => new{aral.AnimalRescueAccountId,aral.LocationId});
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AnimalRescueContext).Assembly);
 
             base.OnModelCreating(modelBuilder);
         }
