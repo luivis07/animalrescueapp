@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using animalrescue.mainmodule.dal;
 
@@ -10,9 +11,11 @@ using animalrescue.mainmodule.dal;
 namespace animalrescue.mainmodule.dal.Migrations.SqlServerMigrations
 {
     [DbContext(typeof(AnimalRescueContext))]
-    partial class AnimalRescueContextModelSnapshot : ModelSnapshot
+    [Migration("20221030014124_Base_Creation")]
+    partial class BaseCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
