@@ -10,8 +10,18 @@ namespace animalrescue.mainmodule.dal
     {
         protected readonly IConfiguration configuration;
 
-        public DbSet<VolunteerApplication> VolunteerApplications {get; set;}
-        public DbSet<AdoptionApplication> AdoptionApplications {get; set;}
+        public DbSet<VolunteerApplication> VolunteerApplication {get; set;}
+        public DbSet<AnimalRescueAccount> AnimalRescueAccount {get; set;}
+        public DbSet<AnimalRescueAccountAdoptionApplication> AnimalRescueAccountAdoptionApplication {get; set;}
+        public DbSet<AnimalRescueAccountFosterApplication> AnimalRescueAccountFosterApplication {get; set;}
+        public DbSet<AnimalRescueAccountLocation> AnimalRescueAccountLocation {get; set;}
+        public DbSet<AnimalRescueAccountRole> AnimalRescueAccountRole {get; set;}
+        public DbSet<AnimalRescueAccountVolunteerApplication> AnimalRescueAccountVolunteerApplication {get; set;}
+        public DbSet<Calendar> Calendar {get; set;}
+        public DbSet<CalendarType> CalendarType {get; set;}
+        public DbSet<Event> Event {get; set;}
+        public DbSet<Location> Location {get; set;}
+        public DbSet<Role> Role {get; set;}
 
         public AnimalRescueContext(IConfiguration configuration)
         {
@@ -19,5 +29,11 @@ namespace animalrescue.mainmodule.dal
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer(configuration.GetConnectionString("animalrescuedb"));
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AnimalRescueContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
