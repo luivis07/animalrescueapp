@@ -14,6 +14,10 @@ import '../scss/custom.scss';
 // Custom CSS imports
 import '../css/site.css';
 
+var $ = require("jquery");
+window.jQuery = $;
+window.$ = $;
+
 (function($){
     $(".ssar-link-group").addClass("row text-center");
 })(jQuery)
