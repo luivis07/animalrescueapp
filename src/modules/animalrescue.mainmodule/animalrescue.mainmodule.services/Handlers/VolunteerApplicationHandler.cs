@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace animalrescue.mainmodule.services.handlers
 {
-    public class VolunteerApplicationHandler : IVolunteerApplicationHandler
+    public class VolunteerApplicationHandler : BaseHandler, IVolunteerApplicationHandler
     {
         private readonly IVolunteerApplicationRepository volunteerApplicationRepository;
         private readonly IMapper mapper;

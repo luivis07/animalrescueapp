@@ -21,7 +21,21 @@ namespace animalrescue.mainmodule.services.setup
         }
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddScoped<IVolunteerApplicationHandler, VolunteerApplicationHandler>();
+            var handlers = AppDomain.CurrentDomain.GetAssemblies()
+                                    .SelectMany(c => c.GetTypes())
+                                    .Where(c => c.Name.EndsWith("Handler") && 
+                                                c.IsClass && 
+                                                !c.IsAbstract &&
+                                                !c.IsInterface &&
+                                                !string.IsNullOrEmpty(c.AssemblyQualifiedName) &&
+                                                c.AssemblyQualifiedName.StartsWith("animalrescue.mainmodule"));
+                                                
+            foreach (var handler in handlers)
+            {
+                var inter = handler.GetInterfaces().FirstOrDefault(i => i.Name.EndsWith(i.Name));
+                if (inter != null)
+                    serviceCollection.AddScoped(inter, handler);
+            }
             return serviceCollection;
         }
     }
