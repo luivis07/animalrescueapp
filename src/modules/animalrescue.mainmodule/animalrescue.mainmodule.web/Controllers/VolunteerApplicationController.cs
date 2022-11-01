@@ -2,10 +2,9 @@ using animalrescue.mainmodule.services.handlers.interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace animalrescue.mainmodule.web
+namespace animalrescue.mainmodule.web.controllers
 {
-    [Route("/[controller]/[action]")]
-    public class VolunteerApplicationController : Controller
+    public class VolunteerApplicationController : BaseController
     {
         private readonly IVolunteerApplicationHandler volunteerApplicationHandler;
 

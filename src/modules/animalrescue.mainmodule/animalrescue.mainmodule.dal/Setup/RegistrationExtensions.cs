@@ -1,5 +1,6 @@
 using animalrescue.mainmodule.dal.repositories;
 using animalrescue.mainmodule.dal.repositories.interfaces;
+using animalrescue.mainmodule.helpers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,12 +25,12 @@ namespace animalrescue.mainmodule.dal.setup
         {
             var repositories = AppDomain.CurrentDomain.GetAssemblies()
                                     .SelectMany(c => c.GetTypes())
-                                    .Where(c => c.Name.EndsWith("Repository") && 
+                                    .Where(c => c.Name.EndsWith(Constants.REPOSITORY_NAME_POSTFIX) && 
                                                 c.IsClass && 
                                                 !c.IsAbstract &&
                                                 !c.IsInterface &&
                                                 !string.IsNullOrEmpty(c.AssemblyQualifiedName) &&
-                                                c.AssemblyQualifiedName.StartsWith("animalrescue.mainmodule"));
+                                                c.AssemblyQualifiedName.StartsWith(Constants.ASSEMBLY_QUALIFIED_NAME_PREFIX));
                                                 
             foreach (var repository in repositories)
             {
