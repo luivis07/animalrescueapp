@@ -1,4 +1,5 @@
 using animalrescue.mainmodule.web.setup;
+using AutoMapper;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using OrchardCore.Environment.Shell.Configuration;
@@ -7,9 +8,11 @@ using OrchardCore.Media.Azure;
 var builder = WebApplication.CreateBuilder(args);
 var env = builder.Environment;
 
-builder.Services.AddAutoMapper(typeof(Program));
+var config = new MapperConfiguration(cfg => {
+    cfg.AddProfiles();
+});
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddSingleton<IMapper>(sp => config.CreateMapper());
 
 builder.Services.AddOrchardCms()
                 .ConfigureServices((tenantServices, serviceProvider) =>
