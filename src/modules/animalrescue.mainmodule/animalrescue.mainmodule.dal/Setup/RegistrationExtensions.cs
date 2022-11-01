@@ -23,6 +23,7 @@ namespace animalrescue.mainmodule.dal.setup
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<IVolunteerApplicationRepository, VolunteerApplicationRepository>();
+            serviceCollection.AddScoped<IAnimalRescueAccountRepository,AnimalRescueAccountRepository>();
             return serviceCollection;
         }
     }

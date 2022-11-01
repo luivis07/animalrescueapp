@@ -20,7 +20,7 @@ namespace animalrescue.mainmodule.services.handlers
         public async Task<AnimalRescueAccountDto?> GetAnimalRescueAccountByUsername(string username)
         {
             var temp = await animalRescueAccountRepository.GetAnimalRescueAccountByUsername(username);
-            return mapper.Map<AnimalRescueAccountDto>(temp);
+            return mapper.Map<AnimalRescueAccountDto?>(temp);
         }
     }
 }

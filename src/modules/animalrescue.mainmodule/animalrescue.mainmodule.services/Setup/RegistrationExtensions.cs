@@ -22,6 +22,7 @@ namespace animalrescue.mainmodule.services.setup
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<IVolunteerApplicationHandler, VolunteerApplicationHandler>();
+            serviceCollection.AddScoped<IAnimalRescueAccountHandler, AnimalRescueAccountHandler>();
             return serviceCollection;
         }
     }
