@@ -48,6 +48,6 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "site.css"
-        })
+        }) 
     ]
 };
