@@ -10,7 +10,7 @@ namespace animalrescue.mainmodule.dal.repositories
     {
         private readonly AnimalRescueContext animalRescueContext;
 
-        public VolunteerApplicationRepository(AnimalRescueContext animalRescueContext)
+        public VolunteerApplicationRepository(AnimalRescueContext animalRescueContext) : base(animalRescueContext)
         {
             this.animalRescueContext = animalRescueContext;
         }
