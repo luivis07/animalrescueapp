@@ -11,8 +11,8 @@ using animalrescue.mainmodule.dal;
 namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
 {
     [DbContext(typeof(LocalAnimalRescueContext))]
-    [Migration("20221031013717_Test_DateOnly")]
-    partial class TestDateOnly
+    [Migration("20221101223337_Removing_Created_Modified")]
+    partial class RemovingCreatedModified
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,13 +42,11 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                         .HasMaxLength(55)
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("date");
 
                     b.Property<string>("EmailAddress")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
@@ -58,9 +56,6 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
 
                     b.Property<string>("LastName")
                         .HasMaxLength(150)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNumber")

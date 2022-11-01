@@ -1,3 +1,4 @@
+using animalrescue.mainmodule.dal.models;
 using animalrescue.mainmodule.dal.repositories.interfaces;
 using animalrescue.mainmodule.services.dtos;
 using animalrescue.mainmodule.services.handlers.interfaces;
@@ -17,10 +18,16 @@ namespace animalrescue.mainmodule.services.handlers
             this.mapper = mapper;
         }
 
-        public async Task<AnimalRescueAccountDto?> GetAnimalRescueAccountByUsername(string username)
+        public async Task<AnimalRescueAccountDto?> GetByUsername(string username)
         {
-            var temp = await animalRescueAccountRepository.GetAnimalRescueAccountByUsername(username);
+            var temp = await animalRescueAccountRepository.GetByUsername(username);
             return mapper.Map<AnimalRescueAccountDto?>(temp);
+        }
+
+        public async Task<bool> Update(AnimalRescueAccountDto animalRescueAccountDto)
+        {
+            var temp = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
+            return await animalRescueAccountRepository.Update(temp);
         }
     }
 }

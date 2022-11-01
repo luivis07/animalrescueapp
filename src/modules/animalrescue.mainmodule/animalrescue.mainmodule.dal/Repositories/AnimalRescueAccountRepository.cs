@@ -15,9 +15,16 @@ namespace animalrescue.mainmodule.dal.repositories
             this.animalRescueContext = animalRescueContext;
         }
 
-        public async Task<AnimalRescueAccount?> GetAnimalRescueAccountByUsername(string username)
+        public async Task<AnimalRescueAccount?> GetByUsername(string username)
         {
             return await animalRescueContext.AnimalRescueAccount.FirstOrDefaultAsync(ara => ara.Username == username);
+        }
+
+        public async Task<bool> Update(AnimalRescueAccount animalRescueAccount)
+        {
+            animalRescueContext.AnimalRescueAccount.Update(animalRescueAccount);
+            var result = await animalRescueContext.SaveChangesAsync();
+            return result>0;
         }
     }
 }

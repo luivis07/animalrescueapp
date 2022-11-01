@@ -7,6 +7,7 @@ namespace animalrescue.mainmodule.dal.repositories.interfaces
 {
     public interface IAnimalRescueAccountRepository
     {
-        public Task<AnimalRescueAccount?> GetAnimalRescueAccountByUsername(string username);
+        public Task<AnimalRescueAccount?> GetByUsername(string username);
+        public Task<bool> Update(AnimalRescueAccount animalRescueAccount);
     }
 }
