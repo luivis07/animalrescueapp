@@ -6,8 +6,8 @@ namespace animalrescue.mainmodule.dal.models
 {
     public class Role
     {
-        public int Id {get; set;}
-        public string Name {get; set;}
-        public virtual IEnumerable<AnimalRescueAccountRole> AnimalRescueAccountRoles {get; set;}
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public virtual IEnumerable<AnimalRescueAccountRole> AnimalRescueAccountRoles { get; set; } = null!;
     }
 }

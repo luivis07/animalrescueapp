@@ -8,7 +8,11 @@ using OrchardCore.Media.Azure;
 var builder = WebApplication.CreateBuilder(args);
 var env = builder.Environment;
 
-builder.Services.AddAutoMapper(typeof(Program));
+var config = new MapperConfiguration(cfg => {
+    cfg.AddProfiles();
+});
+
+builder.Services.AddSingleton<IMapper>(sp => config.CreateMapper());
 
 builder.Services.AddOrchardCms()
                 .ConfigureServices((tenantServices, serviceProvider) =>

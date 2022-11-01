@@ -8,6 +8,6 @@ namespace animalrescue.mainmodule.dal.models
     {
         public int Id {get; set;}
         public int name {get; set;}
-        public virtual IEnumerable<Calendar> Calendars {get; set;}
+        public virtual IEnumerable<Calendar> Calendars {get; set;} = null!;
     }
 }

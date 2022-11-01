@@ -5,16 +5,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.4.0"/>
-    <PackageReference Include="OrchardCore.ContentFields" Version="1.4.0"/>
-    <PackageReference Include="OrchardCore.Infrastructure" Version="1.4.0"/>
-    <PackageReference Include="OrchardCore.ContentManagement" Version="1.4.0"/>
-    <PackageReference Include="OrchardCore.Media.Abstractions" Version="1.4.0"/>
-    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.4.0"/>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0"/>
-    <PackageReference Include="OrchardCore.Module.Targets" Version="1.4.0"/>
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.ContentFields" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Infrastructure" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="1.4.0" />
+    <PackageReference Include="OrchardCore.Media.Abstractions" Version="1.4.0" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.4.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\animalrescue.mainmodule.services\animalrescue.mainmodule.services.csproj"/>
+    <ProjectReference Include="..\animalrescue.mainmodule.services\animalrescue.mainmodule.services.csproj" />
+    <ProjectReference Include="..\animalrescue.mainmodule.helpers\animalrescue.mainmodule.helpers.csproj" />
   </ItemGroup>
 </Project>

@@ -8,6 +8,6 @@ namespace animalrescue.mainmodule.dal.models
     {
         public int Id {get; set;}
         public int AnimalRescueAccountId {get; set;}
-        public virtual AnimalRescueAccount AnimalRescueAccount {get; set;}
+        public virtual AnimalRescueAccount AnimalRescueAccount {get; set;} = null!;
     }
 }
