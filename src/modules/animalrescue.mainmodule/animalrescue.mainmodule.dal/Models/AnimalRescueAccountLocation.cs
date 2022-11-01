@@ -9,7 +9,7 @@ namespace animalrescue.mainmodule.dal.models
         public int AnimalRescueAccountId {get;set;}
         public int LocationId {get;set;}
         public bool IsActive {get;set;}
-        public virtual AnimalRescueAccount AnimalRescueAccount { get; set;}
-        public virtual Location Location { get; set;}
+        public virtual AnimalRescueAccount AnimalRescueAccount { get; set;} = null!;
+        public virtual Location Location { get; set;} = null!;
     }
 }
