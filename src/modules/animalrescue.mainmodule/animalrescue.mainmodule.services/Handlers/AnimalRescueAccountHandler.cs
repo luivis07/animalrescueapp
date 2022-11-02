@@ -18,22 +18,22 @@ namespace animalrescue.mainmodule.services.handlers
             this.mapper = mapper;
         }
 
-        public async Task<AnimalRescueAccountDto?> GetById(int id)
+        public async Task<AnimalRescueAccountDto?> GetByIdAsync(int id)
         {
-            var animalRescueAccount = await animalRescueAccountRepository.GetById(id);
+            var animalRescueAccount = await animalRescueAccountRepository.GetByIdAsync(id);
             return mapper.Map<AnimalRescueAccountDto?>(animalRescueAccount);
         }
 
-        public async Task<AnimalRescueAccountDto?> GetByUsername(string username)
+        public async Task<AnimalRescueAccountDto?> GetByUsernameAsync(string username)
         {
-            var temp = await animalRescueAccountRepository.GetByUsername(username);
+            var temp = await animalRescueAccountRepository.GetByUsernameAsync(username);
             return mapper.Map<AnimalRescueAccountDto?>(temp);
         }
 
-        public async Task<bool> Update(AnimalRescueAccountDto animalRescueAccountDto)
+        public async Task<bool> UpdateAsync(AnimalRescueAccountDto animalRescueAccountDto)
         {
             var temp = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
-            return await animalRescueAccountRepository.Update(temp,animalRescueAccountDto.ChangedProperties.ToList());
+            return await animalRescueAccountRepository.UpdateAsync(temp,animalRescueAccountDto.ChangedProperties.ToList());
         }
     }
 }

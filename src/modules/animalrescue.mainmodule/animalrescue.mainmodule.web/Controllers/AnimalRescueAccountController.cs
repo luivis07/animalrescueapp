@@ -21,7 +21,7 @@ namespace animalrescue.mainmodule.web
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var dto = await animalRescueAccountHandler.GetById(id);
+            var dto = await animalRescueAccountHandler.GetByIdAsync(id);
             var account = mapper.Map<AnimalRescueAccountDetailsVm>(dto);
             /*TODO: Find out how to properly handle Username not found 
             if(account == null)
@@ -35,7 +35,7 @@ namespace animalrescue.mainmodule.web
         public async Task<IActionResult> Update(AnimalRescueAccountUpdateVm animalRescueAccountUpdateVm)
         {
             var dto = mapper.Map<AnimalRescueAccountDto>(animalRescueAccountUpdateVm);
-            var result = await animalRescueAccountHandler.Update(dto);
+            var result = await animalRescueAccountHandler.UpdateAsync(dto);
             if (result)
             {
                 return RedirectToAction("Details",new{id = dto.Id});

@@ -4,8 +4,8 @@ namespace animalrescue.mainmodule.services.handlers.interfaces
 {
     public interface IAnimalRescueAccountHandler
     {
-        public Task<AnimalRescueAccountDto?> GetByUsername(string username);
-        public Task<bool> Update(AnimalRescueAccountDto animalRescueAccountDto);
-        public Task<AnimalRescueAccountDto?> GetById(int id);
+        public Task<AnimalRescueAccountDto?> GetByUsernameAsync(string username);
+        public Task<bool> UpdateAsync(AnimalRescueAccountDto animalRescueAccountDto);
+        public Task<AnimalRescueAccountDto?> GetByIdAsync(int id);
     }
 }
