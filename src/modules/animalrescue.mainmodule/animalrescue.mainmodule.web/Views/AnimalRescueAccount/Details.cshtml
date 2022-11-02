@@ -1,0 +1,57 @@
+@using animalrescue.mainmodule.web.viewmodels.animalrescueaccount
+@model AnimalRescueAccountDetailsVm
+
+
+<h1>Profile Settings<h1>
+<form asp-controller = "AnimalRescueAccount" asp-action = "Update" method="post">
+        <input asp-for ="Id" type="hidden"/>
+        <div class="col-md-3 border-right">
+                <span class="font-weight-bold">@Model.Username</span>
+                <span class="text-black-50">@Model.EmailAddress</span>
+        </div>
+                <div class="row mt-2">
+                        <div class="col-md-6">
+                                <label asp-for="FirstName" class="labels"></label>
+                                <input asp-for="FirstName" type="text" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                                <label asp-for="LastName" class="labels">Last Name</label>
+                                <input asp-for="LastName" type="text" class="form-control" placeholder="Last Name">
+                        </div>
+                </div>
+                <div class="row mt-3">
+                        <div class="col-md-12">
+                                <label asp-for="DateOfBirth" class="labels">Date of Birth</label>
+                                <input asp-for="DateOfBirth" type="text" class="form-control" placeholder="Date of Birth" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="Address1" class="labels">Address Line 1</label>
+                                <input asp-for="Address1" type="text" class="form-control" placeholder="address line 1" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="Address2" class="labels">Address Line 2</label>
+                                <input asp-for="Address2" type="text" class="form-control" placeholder="address line 2" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="City" class="labels">City</label>
+                                <input asp-for="City" type="text" class="form-control" placeholder="City" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="State" class="labels">State</label>
+                                <input asp-for="State" type="text" class="form-control" placeholder="State" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="ZipCode" class="labels">ZipCode</label>
+                                <input asp-for="ZipCode" type="text" class="form-control" placeholder="ZipCode" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="Country" class="labels">Country</label>
+                                <input asp-for="Country" type="text" class="form-control" placeholder="Country" value="">
+                        </div>
+                        <div class="col-md-12">
+                                <label asp-for="PhoneNumber" class="labels">Phone Number</label>
+                                <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" value="">
+                        </div>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Submit">
+</form>                
