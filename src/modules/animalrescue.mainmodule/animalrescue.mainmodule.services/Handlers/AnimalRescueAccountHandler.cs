@@ -18,6 +18,20 @@ namespace animalrescue.mainmodule.services.handlers
             this.mapper = mapper;
         }
 
+        public async Task<int> CreateAsync(AnimalRescueAccountDto animalRescueAccountDto)
+        {
+            var animalRescueAccount = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
+            var newId = await animalRescueAccountRepository.CreateAsync(animalRescueAccount);
+            return newId;
+        }
+
+        public int Create(AnimalRescueAccountDto animalRescueAccountDto)
+        {
+            var animalRescueAccount = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
+            var newId = animalRescueAccountRepository.Create(animalRescueAccount);
+            return newId;
+        }
+
         public async Task<AnimalRescueAccountDto?> GetByIdAsync(int id)
         {
             var animalRescueAccount = await animalRescueAccountRepository.GetByIdAsync(id);

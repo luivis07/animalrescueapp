@@ -5,15 +5,18 @@ using animalrescue.mainmodule.services.handlers.interfaces;
 
 namespace animalrescue.mainmodule.web.events
 {
-    public class UserRegistrationEvent : IRegistrationFormEvents
+    public class UserLoginEvent : ILoginFormEvent
     {
         private readonly IAnimalRescueAccountHandler animalRescueAccountHandler;
 
-        public UserRegistrationEvent(IAnimalRescueAccountHandler animalRescueAccountHandler)
+        public UserLoginEvent(IAnimalRescueAccountHandler animalRescueAccountHandler)
         {
             this.animalRescueAccountHandler = animalRescueAccountHandler;
         }
-        public Task RegisteredAsync(IUser user)
+
+        public Task IsLockedOutAsync(IUser user) => Task.CompletedTask;
+
+        public Task LoggedInAsync(IUser user)
         {
             animalRescueAccountHandler.Create(new AnimalRescueAccountDto
             {
@@ -22,6 +25,10 @@ namespace animalrescue.mainmodule.web.events
             return Task.CompletedTask;
         }
 
-        public Task RegistrationValidationAsync(Action<string, string> reportError) => Task.CompletedTask;
+        public Task LoggingInAsync(string userName, Action<string, string> reportError) => Task.CompletedTask;
+
+        public Task LoggingInFailedAsync(string userName) => Task.CompletedTask;
+
+        public Task LoggingInFailedAsync(IUser user) => Task.CompletedTask;
     }
 }
