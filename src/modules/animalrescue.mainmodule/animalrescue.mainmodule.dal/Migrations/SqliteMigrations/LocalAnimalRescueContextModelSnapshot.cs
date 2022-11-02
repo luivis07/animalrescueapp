@@ -243,17 +243,6 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.ToTable("Role");
                 });
 
-            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplication", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VolunteerApplication");
-                });
-
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.AnimalRescueAccountAdoptionApplication", b =>
                 {
                     b.HasOne("animalrescue.mainmodule.dal.models.AnimalRescueAccount", "AnimalRescueAccount")

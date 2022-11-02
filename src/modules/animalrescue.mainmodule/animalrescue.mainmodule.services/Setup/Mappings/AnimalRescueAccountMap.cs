@@ -8,7 +8,7 @@ namespace animalrescue.mainmodule.services.setup.mappings
     {
         public AnimalRescueAccountMap()
         {
-            CreateMap<AnimalRescueAccount, AnimalRescueAccountDto>();    
+            CreateMap<AnimalRescueAccount, AnimalRescueAccountDto>().ReverseMap();    
         }
     }
 }

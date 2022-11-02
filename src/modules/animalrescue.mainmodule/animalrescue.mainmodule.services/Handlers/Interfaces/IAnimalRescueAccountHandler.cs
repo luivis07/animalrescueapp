@@ -6,5 +6,6 @@ namespace animalrescue.mainmodule.services.handlers.interfaces
     {
         public Task<AnimalRescueAccountDto?> GetByUsername(string username);
         public Task<bool> Update(AnimalRescueAccountDto animalRescueAccountDto);
+        public Task<AnimalRescueAccountDto?> GetById(int id);
     }
 }

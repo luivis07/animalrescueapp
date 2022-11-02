@@ -6,13 +6,18 @@ using System.Collections.Generic;
 
 namespace animalrescue.mainmodule.dal.repositories
 {
-    public class AnimalRescueAccountRepository : IAnimalRescueAccountRepository
+    public class AnimalRescueAccountRepository : BaseRepository<AnimalRescueAccount> , IAnimalRescueAccountRepository
     {
         private readonly AnimalRescueContext animalRescueContext;
 
-        public AnimalRescueAccountRepository(AnimalRescueContext animalRescueContext)
+        public AnimalRescueAccountRepository(AnimalRescueContext animalRescueContext) : base(animalRescueContext)
         {
             this.animalRescueContext = animalRescueContext;
+        }
+
+        public async Task<AnimalRescueAccount?> GetById(int id)
+        {
+            return await animalRescueContext.AnimalRescueAccount.FirstOrDefaultAsync(ara => ara.Id == id);
         }
 
         public async Task<AnimalRescueAccount?> GetByUsername(string username)
@@ -20,11 +25,9 @@ namespace animalrescue.mainmodule.dal.repositories
             return await animalRescueContext.AnimalRescueAccount.FirstOrDefaultAsync(ara => ara.Username == username);
         }
 
-        public async Task<bool> Update(AnimalRescueAccount animalRescueAccount)
+        public async Task<bool> Update(AnimalRescueAccount animalRescueAccount, ICollection<string> modifiedProperties)
         {
-            animalRescueContext.AnimalRescueAccount.Update(animalRescueAccount);
-            var result = await animalRescueContext.SaveChangesAsync();
-            return result>0;
+            return await UpdateAsync(animalRescueAccount,modifiedProperties);
         }
     }
 }

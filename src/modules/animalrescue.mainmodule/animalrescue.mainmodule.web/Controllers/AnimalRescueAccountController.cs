@@ -1,5 +1,7 @@
 using animalrescue.mainmodule.services.dtos;
 using animalrescue.mainmodule.services.handlers.interfaces;
+using animalrescue.mainmodule.web.viewmodels.animalrescueaccount;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -9,15 +11,18 @@ namespace animalrescue.mainmodule.web
     public class AnimalRescueAccountController : Controller
     {
         private readonly IAnimalRescueAccountHandler animalRescueAccountHandler;
+        private readonly IMapper mapper;
 
-        public AnimalRescueAccountController(IAnimalRescueAccountHandler animalRescueAccountHandler)
+        public AnimalRescueAccountController(IAnimalRescueAccountHandler animalRescueAccountHandler,IMapper mapper)
         {
             this.animalRescueAccountHandler = animalRescueAccountHandler;
+            this.mapper = mapper;
         }
         [HttpGet]
-        public async Task<IActionResult> Details(string username)
+        public async Task<IActionResult> Details(int id)
         {
-            var account = await animalRescueAccountHandler.GetByUsername(username);
+            var dto = await animalRescueAccountHandler.GetById(id);
+            var account = mapper.Map<AnimalRescueAccountDetailsVm>(dto);
             /*TODO: Find out how to properly handle Username not found 
             if(account == null)
             {
@@ -27,14 +32,15 @@ namespace animalrescue.mainmodule.web
             return View(account);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(AnimalRescueAccountDto animalRescueAccountDto)
+        public async Task<IActionResult> Update(AnimalRescueAccountUpdateVm animalRescueAccountUpdateVm)
         {
-            var result = await animalRescueAccountHandler.Update(animalRescueAccountDto);
+            var dto = mapper.Map<AnimalRescueAccountDto>(animalRescueAccountUpdateVm);
+            var result = await animalRescueAccountHandler.Update(dto);
             if (result)
             {
-                return RedirectToAction("Details",new{username = animalRescueAccountDto.Username});
+                return RedirectToAction("Details",new{id = dto.Id});
             }
-            return View(animalRescueAccountDto);
+            return View(animalRescueAccountUpdateVm);
         }
     }
 }

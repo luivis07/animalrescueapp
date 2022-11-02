@@ -18,6 +18,12 @@ namespace animalrescue.mainmodule.services.handlers
             this.mapper = mapper;
         }
 
+        public async Task<AnimalRescueAccountDto?> GetById(int id)
+        {
+            var animalRescueAccount = await animalRescueAccountRepository.GetById(id);
+            return mapper.Map<AnimalRescueAccountDto?>(animalRescueAccount);
+        }
+
         public async Task<AnimalRescueAccountDto?> GetByUsername(string username)
         {
             var temp = await animalRescueAccountRepository.GetByUsername(username);
@@ -27,7 +33,7 @@ namespace animalrescue.mainmodule.services.handlers
         public async Task<bool> Update(AnimalRescueAccountDto animalRescueAccountDto)
         {
             var temp = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
-            return await animalRescueAccountRepository.Update(temp);
+            return await animalRescueAccountRepository.Update(temp,animalRescueAccountDto.ChangedProperties.ToList());
         }
     }
 }

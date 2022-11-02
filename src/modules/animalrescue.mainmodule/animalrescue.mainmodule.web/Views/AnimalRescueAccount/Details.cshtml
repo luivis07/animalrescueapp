@@ -1,11 +1,10 @@
-@using animalrescue.mainmodule.services.dtos
-@model AnimalRescueAccountDto
+@using animalrescue.mainmodule.web.viewmodels.animalrescueaccount
+@model AnimalRescueAccountDetailsVm
 
 
 <h1>Profile Settings<h1>
 <form asp-controller = "AnimalRescueAccount" asp-action = "Update" method="post">
-        <hidden asp-for = "Username"></hidden>
-        <hidden asp-for = "Id"></hidden>
+        <input asp-for ="Id" type="hidden"/>
         <div class="col-md-3 border-right">
                 <span class="font-weight-bold">@Model.Username</span>
                 <span class="text-black-50">@Model.EmailAddress</span>
