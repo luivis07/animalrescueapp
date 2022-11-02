@@ -38,10 +38,10 @@ namespace animalrescue.mainmodule.dal.repositories
         {
             return await dbSet.FirstOrDefaultAsync(ara => ara.Username == username);
         }
-
+        
         public async Task<bool> UpdateAsync(AnimalRescueAccount animalRescueAccount, ICollection<string> modifiedProperties)
         {
-            return await UpdateAsync(animalRescueAccount, modifiedProperties);
+            return await base.UpdateAsync(animalRescueAccount, modifiedProperties);
         }
     }
 }

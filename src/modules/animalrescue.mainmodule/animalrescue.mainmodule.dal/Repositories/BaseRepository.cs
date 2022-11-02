@@ -16,7 +16,7 @@ namespace animalrescue.mainmodule.dal.repositories
             this.animalRescueContext = animalRescueContext;
             this.dbSet = animalRescueContext.Set<T>();
         }
-        protected async Task<bool> UpdateAsync(T entity, ICollection<string> modifiedProperties, bool saveChanges = true)
+        protected virtual async Task<bool> UpdateAsync(T entity, ICollection<string> modifiedProperties, bool saveChanges = true)
         {
             var entry = animalRescueContext.Entry(entity);
             foreach(var property in modifiedProperties)

@@ -35,7 +35,7 @@ namespace animalrescue.mainmodule.web
             return View(account);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(AnimalRescueAccountUpdateVm animalRescueAccountUpdateVm)
+        public async Task<IActionResult> Details(AnimalRescueAccountUpdateVm animalRescueAccountUpdateVm)
         {
             var dto = mapper.Map<AnimalRescueAccountDto>(animalRescueAccountUpdateVm);
             var result = await animalRescueAccountHandler.UpdateAsync(dto);
