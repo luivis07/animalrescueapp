@@ -12,5 +12,6 @@
     <PackageReference Include="OrchardCore.Menu" Version="1.4.0"/>
     <PackageReference Include="OrchardCore.Workflows" Version="1.4.0"/>
     <PackageReference Include="OrchardCore.Forms" Version="1.4.0"/>
+    <PackageReference Include="OrchardCore.Users" Version="1.4.0"/>
   </ItemGroup>
 </Project>
