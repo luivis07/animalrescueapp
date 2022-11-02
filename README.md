@@ -18,7 +18,9 @@
   - Projects
     - animalrescue.web - CMS-Front End
     - animalrescue.mainmodule - User Management
-    - animalrescue.defaulttheme - Custom Theme for CMS 
+    - animalrescue.defaulttheme - Custom Theme for CMS
+  - EF Diagram
+    - https://drive.google.com/file/d/1cGGOYfm_jWr43l7PiLKpv_wE_exhq641/view
 
 - To Build/Run:
   - sign-in to azure from VS code using the extension mentioned above (Azure Account)
