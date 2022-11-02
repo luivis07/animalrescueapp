@@ -10,10 +10,19 @@ param(
     [string]$environment = 'Development',
 
     #connectionstring to db if applicable (require for 'Production')
-    [string]$connectionstring
+    [string]$connectionstring,
+
+    #force database reset, this will delete local db file
+    [switch]$reset
 )
 
-$env:ASNETCORE_ENVIRONMENT=$environment
+if($reset)
+{
+    Remove-Item -Path "$env:LOCALAPPDATA\animalrescue.db*"
+}
+
+#$env:ASNETCORE_ENVIRONMENT=$environment
+
 if($environment -eq 'Production')
 {
     if($migrationname)

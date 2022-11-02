@@ -9,8 +9,6 @@ namespace animalrescue.mainmodule.dal
     public class AnimalRescueContext : DbContext
     {
         protected readonly IConfiguration configuration;
-
-        public DbSet<VolunteerApplication> VolunteerApplication => Set<VolunteerApplication>();
         public DbSet<AnimalRescueAccount> AnimalRescueAccount => Set<AnimalRescueAccount>();
         public DbSet<AnimalRescueAccountAdoptionApplication> AnimalRescueAccountAdoptionApplication => Set<AnimalRescueAccountAdoptionApplication>();
         public DbSet<AnimalRescueAccountFosterApplication> AnimalRescueAccountFosterApplication => Set<AnimalRescueAccountFosterApplication>();

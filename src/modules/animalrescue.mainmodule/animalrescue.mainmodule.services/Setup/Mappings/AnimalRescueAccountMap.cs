@@ -4,11 +4,11 @@ using animalrescue.mainmodule.services.dtos;
 
 namespace animalrescue.mainmodule.services.setup.mappings
 {
-    public class VolunteerApplicationMap : Profile
+    public class AnimalRescueAccountMap : Profile
     {
-        public VolunteerApplicationMap()
+        public AnimalRescueAccountMap()
         {
-            CreateMap<VolunteerApplication, VolunteerApplicationDto>();    
+            CreateMap<AnimalRescueAccount, AnimalRescueAccountDto>().ReverseMap();    
         }
     }
 }
