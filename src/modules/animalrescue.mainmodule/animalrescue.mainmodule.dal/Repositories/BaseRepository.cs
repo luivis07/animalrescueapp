@@ -16,14 +16,16 @@ namespace animalrescue.mainmodule.dal.repositories
             this.animalRescueContext = animalRescueContext;
             this.dbSet = animalRescueContext.Set<T>();
         }
-        protected async Task<bool> BaseUpdateAsync(T entity, ICollection<string> modifiedProperties)
+        protected async Task<bool> UpdateAsync(T entity, ICollection<string> modifiedProperties, bool saveChanges = true)
         {
             var entry = animalRescueContext.Entry(entity);
             foreach(var property in modifiedProperties)
             {
                 entry.Property(property).IsModified = true;
             }
-            return await animalRescueContext.SaveChangesAsync() > 0;
+            if(saveChanges)
+                return await animalRescueContext.SaveChangesAsync() > 0;
+            return true;
         }
     }
 }

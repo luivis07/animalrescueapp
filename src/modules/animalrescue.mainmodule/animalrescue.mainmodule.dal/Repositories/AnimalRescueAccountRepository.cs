@@ -41,7 +41,7 @@ namespace animalrescue.mainmodule.dal.repositories
 
         public async Task<bool> UpdateAsync(AnimalRescueAccount animalRescueAccount, ICollection<string> modifiedProperties)
         {
-            return await BaseUpdateAsync(animalRescueAccount,modifiedProperties);
+            return await UpdateAsync(animalRescueAccount, modifiedProperties);
         }
     }
 }
