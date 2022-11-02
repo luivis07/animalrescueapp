@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -17,7 +18,17 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Username = table.Column<string>(type: "TEXT", nullable: false),
-                    FirstName = table.Column<string>(type: "TEXT", nullable: false)
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 150, nullable: true),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 150, nullable: true),
+                    EmailAddress = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "TEXT", maxLength: 150, nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "date", nullable: true),
+                    Address1 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    Address2 = table.Column<string>(type: "TEXT", maxLength: 60, nullable: true),
+                    City = table.Column<string>(type: "TEXT", maxLength: 60, nullable: true),
+                    State = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    ZipCode = table.Column<string>(type: "TEXT", maxLength: 10, nullable: true),
+                    Country = table.Column<string>(type: "TEXT", maxLength: 55, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -61,18 +72,6 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Role", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "VolunteerApplication",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_VolunteerApplication", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -290,9 +289,6 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
 
             migrationBuilder.DropTable(
                 name: "Event");
-
-            migrationBuilder.DropTable(
-                name: "VolunteerApplication");
 
             migrationBuilder.DropTable(
                 name: "Role");

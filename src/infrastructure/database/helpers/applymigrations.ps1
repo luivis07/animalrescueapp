@@ -21,7 +21,8 @@ if($reset)
     Remove-Item -Path "$env:LOCALAPPDATA\animalrescue.db*"
 }
 
-$env:ASNETCORE_ENVIRONMENT=$environment
+#$env:ASNETCORE_ENVIRONMENT=$environment
+
 if($environment -eq 'Production')
 {
     if($migrationname)
