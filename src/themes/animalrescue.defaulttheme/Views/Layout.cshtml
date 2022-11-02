@@ -15,8 +15,8 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
                 <a class="navbar-brand" href="~/">Saving Sage</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -26,11 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <menu alias="alias:MainMenu" cache-id="MainMenu" cache-fixed-duration="00:05:00"
                         cache-tag="alias:MainMenu" />
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Search</button>
-                    </form>
-                    <a class="btn btn-primary" href="~/Login">Login</a>
+                    <shape type="LoginMenu" />
                 </div>
             </div>
         </nav>
