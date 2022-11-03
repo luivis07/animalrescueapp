@@ -21,6 +21,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.dal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.services", "src\modules\animalrescue.mainmodule\animalrescue.mainmodule.services\animalrescue.mainmodule.services.csproj", "{68B0AD7A-4014-4770-BBE1-86CFF252EB80}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7B7A7FFE-4E95-4EB8-947A-33F57BD7E9DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules.tests", "modules.tests", "{48068F68-F1E4-4FBF-853E-6825B8A270E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "animalrescue.mainmodule.tests", "animalrescue.mainmodule.tests", "{D376324B-28E6-4430-9DF0-1404203DCC65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.web.tests", "tests\modules.tests\animalrescue.mainmodule.tests\animalrescue.mainmodule.web.tests\animalrescue.mainmodule.web.tests.csproj", "{882D0929-9AF3-460E-82B2-BB2A759E3113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "animalrescue.mainmodule.tests", "tests\modules.tests\animalrescue.mainmodule.tests\animalrescue.mainmodule.services.tests\animalrescue.mainmodule.tests.csproj", "{F4AFB1E0-1021-409D-837A-262ED81ABA89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +60,14 @@ Global
 		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68B0AD7A-4014-4770-BBE1-86CFF252EB80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882D0929-9AF3-460E-82B2-BB2A759E3113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882D0929-9AF3-460E-82B2-BB2A759E3113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882D0929-9AF3-460E-82B2-BB2A759E3113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882D0929-9AF3-460E-82B2-BB2A759E3113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AFB1E0-1021-409D-837A-262ED81ABA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AFB1E0-1021-409D-837A-262ED81ABA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AFB1E0-1021-409D-837A-262ED81ABA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AFB1E0-1021-409D-837A-262ED81ABA89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB5E41C4-6705-4C08-AA55-EDEEEC611963} = {80FFFF4E-6B32-4CD5-851A-BBCDBEE9482D}
@@ -60,5 +78,9 @@ Global
 		{E1F8BAFB-09CA-4B93-909F-68A5A541340C} = {4E12A6FD-CF1F-4945-BD54-F6EE26F00B8B}
 		{5973FAE8-2DC8-4754-91B7-2D355C41015A} = {E1F8BAFB-09CA-4B93-909F-68A5A541340C}
 		{68B0AD7A-4014-4770-BBE1-86CFF252EB80} = {E1F8BAFB-09CA-4B93-909F-68A5A541340C}
+		{48068F68-F1E4-4FBF-853E-6825B8A270E8} = {7B7A7FFE-4E95-4EB8-947A-33F57BD7E9DC}
+		{D376324B-28E6-4430-9DF0-1404203DCC65} = {48068F68-F1E4-4FBF-853E-6825B8A270E8}
+		{882D0929-9AF3-460E-82B2-BB2A759E3113} = {D376324B-28E6-4430-9DF0-1404203DCC65}
+		{F4AFB1E0-1021-409D-837A-262ED81ABA89} = {D376324B-28E6-4430-9DF0-1404203DCC65}
 	EndGlobalSection
 EndGlobal
