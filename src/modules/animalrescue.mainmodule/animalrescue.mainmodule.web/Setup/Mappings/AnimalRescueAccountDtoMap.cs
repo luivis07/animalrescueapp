@@ -9,7 +9,11 @@ namespace animalrescue.mainmodule.web.mappings
     {
         public AnimalRescueAccountDtoMap()
         {
-            CreateMap<AnimalRescueAccountUpdateVm,AnimalRescueAccountDto>();
+            CreateMap<AnimalRescueAccountUpdateVm,AnimalRescueAccountDto>()
+                .ForMember(dest => dest.Username, o => o.Ignore())
+                .ForMember(dest => dest.EmailAddress, o => o.Ignore())
+                .ForMember(dest => dest.ChangedProperties, o => o.Ignore());
+
             CreateMap<AnimalRescueAccountDto,AnimalRescueAccountDetailsVm>();
         }
     }

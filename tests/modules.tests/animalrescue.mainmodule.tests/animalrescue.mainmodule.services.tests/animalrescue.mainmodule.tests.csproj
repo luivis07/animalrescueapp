@@ -20,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.services\animalrescue.mainmodule.services.csproj" />
+    <ProjectReference Include="..\..\..\..\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.web\animalrescue.mainmodule.web.csproj" />
   </ItemGroup>
 </Project>
