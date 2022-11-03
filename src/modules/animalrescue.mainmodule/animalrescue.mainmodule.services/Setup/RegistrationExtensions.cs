@@ -2,6 +2,7 @@ using animalrescue.mainmodule.dal.setup;
 using animalrescue.mainmodule.helpers;
 using animalrescue.mainmodule.services.dtos;
 using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace animalrescue.mainmodule.services.setup
@@ -24,6 +25,7 @@ namespace animalrescue.mainmodule.services.setup
         {
             serviceCollection.RegisterHandlers();
             serviceCollection.RegisterValidators();
+            serviceCollection.AddScoped<ValidationResult>();
             return serviceCollection;
         }
         private static IServiceCollection RegisterHandlers(this IServiceCollection serviceCollection)

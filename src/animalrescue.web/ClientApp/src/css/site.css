@@ -36,3 +36,10 @@ div.ssar-link-group a:hover {
 .carousel .border {
     padding: 30px;
 }
+
+/*
+    validation summary
+*/
+.validation-summary-valid {
+    display:none;
+}

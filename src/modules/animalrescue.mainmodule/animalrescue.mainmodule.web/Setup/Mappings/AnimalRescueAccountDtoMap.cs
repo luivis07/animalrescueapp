@@ -15,6 +15,8 @@ namespace animalrescue.mainmodule.web.mappings
                 .ForMember(dest => dest.ChangedProperties, o => o.Ignore());
 
             CreateMap<AnimalRescueAccountDto,AnimalRescueAccountDetailsVm>();
+
+            CreateMap<AnimalRescueAccountUpdateVm,AnimalRescueAccountDetailsVm>();
         }
     }
 }

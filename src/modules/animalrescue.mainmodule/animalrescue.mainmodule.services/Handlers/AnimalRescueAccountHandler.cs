@@ -13,14 +13,17 @@ namespace animalrescue.mainmodule.services.handlers
         private readonly IAnimalRescueAccountRepository animalRescueAccountRepository;
         private readonly IMapper mapper;
         private readonly IValidator<AnimalRescueAccountDto> validator;
+        private readonly ValidationResult validationResult;
 
         public AnimalRescueAccountHandler(IAnimalRescueAccountRepository animalRescueAccountRepository,
                                             IMapper mapper,
-                                            IValidator<AnimalRescueAccountDto> validator)
+                                            IValidator<AnimalRescueAccountDto> validator,
+                                            ValidationResult validationResult)
         {
             this.animalRescueAccountRepository = animalRescueAccountRepository;
             this.mapper = mapper;
             this.validator = validator;
+            this.validationResult = validationResult;
         }
 
         public async Task<int> CreateAsync(AnimalRescueAccountDto animalRescueAccountDto)
@@ -52,8 +55,13 @@ namespace animalrescue.mainmodule.services.handlers
         public async Task<bool> UpdateAsync(AnimalRescueAccountDto animalRescueAccountDto)
         {
             var result = validator.Validate(animalRescueAccountDto);
+            if (!result.IsValid)
+            {
+                mapper.Map(result, validationResult);
+                return false;
+            }
             var temp = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
-            return await animalRescueAccountRepository.UpdateAsync(temp,animalRescueAccountDto.ChangedProperties.ToList());
+            return await animalRescueAccountRepository.UpdateAsync(temp, animalRescueAccountDto.ChangedProperties.ToList());
         }
     }
 }
