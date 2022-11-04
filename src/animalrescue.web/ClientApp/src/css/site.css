@@ -37,6 +37,10 @@ div.ssar-link-group a:hover {
     padding: 30px;
 }
 
+body { 
+    padding-top: 70px; 
+}
+
 /*
     validation summary
 */
