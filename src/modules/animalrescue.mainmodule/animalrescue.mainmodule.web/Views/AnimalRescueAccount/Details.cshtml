@@ -3,6 +3,10 @@
 
 
 <h1>Profile Settings<h1>
+<div asp-validation-summary="All">
+    <span>Please correct the following errors</span>
+</div>
+
 <form asp-controller = "AnimalRescueAccount" asp-action = "Details" method="post">
         <input asp-for ="Id" type="hidden"/>
         <div class="col-md-3 border-right">

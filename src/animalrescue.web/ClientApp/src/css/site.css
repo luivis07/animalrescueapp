@@ -40,3 +40,10 @@ div.ssar-link-group a:hover {
 body { 
     padding-top: 70px; 
 }
+
+/*
+    validation summary
+*/
+.validation-summary-valid {
+    display:none;
+}
