@@ -6,7 +6,7 @@ public class AnimalRescueAccountValidator : AbstractValidator<AnimalRescueAccoun
     public AnimalRescueAccountValidator()
     {   
         RuleFor(ara => ara.Id).GreaterThan(0);
-        RuleFor(ara => ara.FirstName).NotEmpty().WithMessage("First Name is required");
-        RuleFor(ara => ara.LastName).NotEmpty().WithMessage("Last Name is required");
+        RuleFor(ara => ara.FirstName).NotEmpty();
+        RuleFor(ara => ara.LastName).NotEmpty();
     }
 }
