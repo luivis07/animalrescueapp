@@ -1,7 +1,8 @@
 using animalrescue.mainmodule.dal.setup;
 using animalrescue.mainmodule.helpers;
-using animalrescue.mainmodule.services.handlers;
-using animalrescue.mainmodule.services.handlers.interfaces;
+using animalrescue.mainmodule.services.dtos;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace animalrescue.mainmodule.services.setup
@@ -23,6 +24,8 @@ namespace animalrescue.mainmodule.services.setup
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
             serviceCollection.RegisterHandlers();
+            serviceCollection.RegisterValidators();
+            serviceCollection.AddScoped<ValidationResult>();
             return serviceCollection;
         }
         private static IServiceCollection RegisterHandlers(this IServiceCollection serviceCollection)
@@ -42,6 +45,11 @@ namespace animalrescue.mainmodule.services.setup
                 if (inter != null)
                     serviceCollection.AddScoped(inter, handler);
             }
+            return serviceCollection;
+        }
+        private static IServiceCollection RegisterValidators(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddValidatorsFromAssemblyContaining<AnimalRescueAccountDto>(ServiceLifetime.Transient);
             return serviceCollection;
         }
     }

@@ -2,29 +2,32 @@ using animalrescue.mainmodule.services.dtos;
 using animalrescue.mainmodule.services.handlers.interfaces;
 using animalrescue.mainmodule.web.viewmodels.animalrescueaccount;
 using AutoMapper;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OrchardCore.Users;
 using System.Threading.Tasks;
 
-namespace animalrescue.mainmodule.web
+namespace animalrescue.mainmodule.web.controllers
 {
     [Authorize]
-    [Route("/[controller]/[action]")]
-    public class AnimalRescueAccountController : Controller
+    public class AnimalRescueAccountController : BaseController
     {
         private readonly IAnimalRescueAccountHandler animalRescueAccountHandler;
         private readonly IMapper mapper;
         private readonly UserManager<IUser> userManager;
+        private readonly ValidationResult validationResult;
 
         public AnimalRescueAccountController(IAnimalRescueAccountHandler animalRescueAccountHandler,
             IMapper mapper,
-            UserManager<IUser> userManager)
+            UserManager<IUser> userManager,
+            ValidationResult validationResult)
         {
             this.animalRescueAccountHandler = animalRescueAccountHandler;
             this.mapper = mapper;
             this.userManager = userManager;
+            this.validationResult = validationResult;
         }
         [HttpGet]
         public async Task<IActionResult> Details()
@@ -43,7 +46,9 @@ namespace animalrescue.mainmodule.web
             {
                 return RedirectToAction("Details");
             }
-            return View(animalRescueAccountUpdateVm);
+            AddToModelState(validationResult);
+            var detailsVm = mapper.Map<AnimalRescueAccountDetailsVm>(animalRescueAccountUpdateVm);
+            return View(detailsVm);
         }
     }
 }
