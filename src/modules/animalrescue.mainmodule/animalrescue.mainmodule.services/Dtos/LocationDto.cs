@@ -1,11 +1,12 @@
-using animalrescue.mainmodule.helpers.interfaces;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using animalrescue.mainmodule.helpers.interfaces;
 
-namespace animalrescue.mainmodule.dal.models
+namespace animalrescue.mainmodule.services.dtos
 {
-    public class Location : IHasAddress
+    public class LocationDto : BaseDto, IHasAddress
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -17,7 +18,5 @@ namespace animalrescue.mainmodule.dal.models
         public string? State { get; set; }
         public string? ZipCode { get; set; }
         public string? Country { get; set; }
-        public virtual IEnumerable<AnimalRescueAccountLocation> AnimalRescueAccountLocations { get; set; } = null!;
-        public virtual IEnumerable<Calendar> Calendars { get; set; } = null!;
     }
 }

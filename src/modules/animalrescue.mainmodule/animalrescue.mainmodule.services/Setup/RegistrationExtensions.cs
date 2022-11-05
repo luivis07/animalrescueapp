@@ -22,6 +22,11 @@ namespace animalrescue.mainmodule.services.setup
         }
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
+            serviceCollection.RegisterHandlers();
+            return serviceCollection;
+        }
+        private static IServiceCollection RegisterHandlers(this IServiceCollection serviceCollection)
+        {
             var handlers = AppDomain.CurrentDomain.GetAssemblies()
                                     .SelectMany(c => c.GetTypes())
                                     .Where(c => c.Name.EndsWith(Constants.HANDLER_NAME_POSTFIX) &&

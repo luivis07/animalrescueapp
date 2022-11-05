@@ -1,10 +1,11 @@
+using animalrescue.mainmodule.helpers.interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
 namespace animalrescue.mainmodule.dal.models
 {
-    public class AnimalRescueAccount
+    public class AnimalRescueAccount : IHasAddress
     {
         public int Id { get; set; }
         public string Username { get; set; } = string.Empty;
