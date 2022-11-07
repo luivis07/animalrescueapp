@@ -25,5 +25,9 @@ namespace animalrescue.mainmodule.web
         {
             return View();
         }
+        public IActionResult Donate()
+        {
+            return View();
+        }
     }
 }

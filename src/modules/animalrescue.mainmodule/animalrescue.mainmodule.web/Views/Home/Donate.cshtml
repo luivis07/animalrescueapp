@@ -1,0 +1,142 @@
+@* Per Bootstrap documentation importing stylesheets and scripts for accordion use https://getbootstrap.com/docs/4.6/getting-started/introduction/ *@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<div class="donate-container">
+    <div class="title-wrapper">
+        <h1>Donate</h1>
+    </div>
+
+    <div class="sub-title-wrapper">
+        <h3>Become a SPONSOR to one of our many life-changing Animal Rescue Programs and help us change the lives of abused, unwanted and neglected animals.</h3>
+    </div>
+
+    <div class="content-wrapper">
+        <p>Saving Sage is a tax exempt 501(c)3 which operates 100% by volunteers. Every dollar we receive goes directly to the animals for things like spay and neuter, medical care, food, preventatives and our facility. We absolutely depend on our communities support to help to fund our animal rescue mission.We need your HELP now. Please donate towards the work that we do. We can not continue our mission with out the community’s support. Please support us! Donate any amount today so that we can continue to dates to animals in need.</p>
+    </div>
+
+    <div class="sub-title-wrapper">
+        <h3>We currently have 4 Donation Categories:</h3>
+    </div>
+
+@* ACCORDION SECTION *@
+    <div class="accordion" id="accordionContainer">
+        <div class="card">
+            <div class="card-header" id="generalHeading">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#General" aria-expanded="true" aria-controls="General">
+                    General
+                    </button>
+                </h5>
+            </div>
+
+            <div id="General" class="collapse show" aria-labelledby="generalHeading" data-parent="#accordionContainer">
+                <div class="card-body">
+                    This fund is for purchasing supplies, food, vet care, facility maintenance, etc. for all our animals.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="RTFHeading">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#RTF" aria-expanded="false" aria-controls="RTF">
+                    RTF
+                    </button>
+                </h5>
+            </div>
+
+            <div id="RTF" class="collapse" aria-labelledby="RTFHeading" data-parent="#accordionContainer">
+                <div class="card-body">
+                    Did you know that Saving Sage is a proud partner of Broward County Animal Care and Adoption RTF (Return to field) program. For over a year, every single day, rain or shine, our volunteers pick up community cats from the shelter. We help out by taking the overflow of cats for spay and neuter services and then we keep them in our facility to recover. Eventually, our dedicated volunteers give these cats a ride back home. We cover all of Broward County (and sometimes Dade) The cats are only released once healthy and recovered. No amount is ever too small but a donation of $50 sponsors a cat's neuter, vaccine boarding & most medical treatment.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="corpSponsorshipHeading">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#CorpSponsorship" aria-expanded="false" aria-controls="CorpSponsorship">
+                    Corporate Sponsorship
+                    </button>
+                </h5>
+            </div>
+
+            <div id="CorpSponsorship" class="collapse" aria-labelledby="corpSponsorshipHeading" data-parent="#accordionContainer">
+                <div class="card-body">
+                    In order to qualify for Corporate Sponsorship, we require a monthly donation of $100 for at least six consecutive months. In return, we will place your logo and link to your website on our @Html.ActionLink("Sponsorship page.", "Sponsors", "Home")
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="sponsorAnimalHeading">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#sponsorAnimal" aria-expanded="false" aria-controls="sponsorAnimal">
+                    Sponsor a specific Animal
+                    </button>
+                </h5>
+            </div>
+
+            <div id="sponsorAnimal" class="collapse" aria-labelledby="sponsorAnimalHeading" data-parent="#accordionContainer">
+                <div class="card-body">
+                    If you wish, you may donate money toward a specific animal. Many times on Facebook we will advise of certain animals in need, or you can just pick out one of your favorites!
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="adoptionFeesHeading">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#adoptionFees" aria-expanded="false" aria-controls="adoptionFees">
+                    Adoption fees
+                    </button>
+                </h5>
+            </div>
+
+            <div id="adoptionFees" class="collapse" aria-labelledby="adoptionFeesHeading" data-parent="#accordionContainer">
+                <div class="card-body">
+                    Adoption fees
+                </div>
+            </div>
+        </div>
+    </div> 
+
+@* DONATION LINKS SECTION *@
+    <div class="flexContainer" id="donateCardContainer">
+        <div id="CorpSponsorCard" class="donate-card">
+            <div class="card-img-slot"></div>
+            <h5>Corporate Sponsor</h5>
+            <a class="btn btn-primary" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z3HK3YGUTKE28" target="_blank">Subscribe</a>
+        </div>
+        <div id="GenDonationCard" class="donate-card">
+            <div class="card-img-slot"></div>
+            <h5>General Donation</h5>
+            <a class="btn btn-primary" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KUANM7WMDS85S&source=url" target="_blank">Donate</a>
+        </div>
+        <div id="RTFFundCard" class="donate-card">
+            <div class="card-img-slot"></div>
+            <h5>RTF Fund</h5>
+            <a class="btn btn-primary" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=59WJ99F8RUHAE&source=url" target="_blank">Donate</a>
+        </div>
+        <div id="SponorAnimalCard" class="donate-card">
+            <div class="card-img-slot"></div>
+            <h5>Sponsor an Animal</h5>
+            <a class="btn btn-primary" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EDWYBTNYKNAJC&source=url" target="_blank">Donate</a>
+        </div>
+        <div id="AdoptFeesCard" class="donate-card">
+            <div class="card-img-slot"></div>
+            <h5>Adoption Fees</h5>
+            <a class="btn btn-primary" href="https://www.paypal.com/donate/?hosted_button_id=Y7FH9CCF99YV6" target="_blank">Pay</a>
+        </div>
+    </div>
+@* VOLUNTEER REDIRECT SECTION *@
+    <div id="volunteerRedirectSection" class="content-wrapper">
+        <p>If you can’t donate we understand. @Html.ActionLink("Consider volunteering", "List", "VolunteerApplication") because we need help.</p>
+    </div>
+
+</div>
+
+
