@@ -9,7 +9,6 @@ namespace animalrescue.mainmodule.web.controllers
     {
         public void AddToModelState(ValidationResult result)
         {
-
             if (!result.IsValid)
             {
                 foreach (var error in result.Errors)
