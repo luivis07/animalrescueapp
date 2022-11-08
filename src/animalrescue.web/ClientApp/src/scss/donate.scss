@@ -1,4 +1,10 @@
 .donate-container {
+
+    // Variables
+    $donate-card-height: 160px;
+    $donate-card-width: 200px;
+
+    // Global settings
     font-family: sans-serif;
 
     .title-wrapper{
@@ -28,8 +34,8 @@
     .donate-card {
         position: relative;
         z-index: 1;
-        width: 200px;
-        height: 160px;
+        width: $donate-card-width;
+        height: $donate-card-height;
         text-align: center;
         padding-top: 45px;
         color: black;
@@ -43,33 +49,40 @@
         left: 0;
         right: 0;
         opacity: .4;
-        width: 200px;
-        height: 160px;
+        width: $donate-card-width;
+        height: $donate-card-height;
+        background-size: cover;
     }
 
-    #CorpSponsorCard .card-img-slot {
-        background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/business-executives-discussing-project-ideas-at-team-meeting-conference-table-ochdrn2wzq5jc16rmke70d94im0zr1t7uakqnpsnwo.jpg);
-    }
+    // NEED TO RESOLVE WEBPACK BUILD ISSUES WITH SCSS FILES REFERENCING IMG SOURCES
+    // #CorpSponsorCard .card-img-slot {
+    //     background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/business-executives-discussing-project-ideas-at-team-meeting-conference-table-ochdrn2wzq5jc16rmke70d94im0zr1t7uakqnpsnwo.jpg);
+    //     //background-image: url(/media/donate/corp-sponsor-img.jpg);
+    // }
 
-    #GenDonationCard .card-img-slot {
-        background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/group-of-pets-together-in-front-of-white-background-obdjran3ncbebwfhjnq8flb51rut1oqkti93g5q7ew.jpg);
-    }
+    // #GenDonationCard .card-img-slot {
+    //     background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/group-of-pets-together-in-front-of-white-background-obdjran3ncbebwfhjnq8flb51rut1oqkti93g5q7ew.jpg);
+    //     //background-image: url(/media/donate/gen-donation-img.jpg);
+    // }
 
-    #RTFFundCard .card-img-slot {
-        background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/rtf-ochdrdoj3dso3xkf5gbxbfmikrbbm2rwh01vuy6lmw.jpg);
-    }
+    // #RTFFundCard .card-img-slot {
+    //     background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/rtf-ochdrdoj3dso3xkf5gbxbfmikrbbm2rwh01vuy6lmw.jpg);
+    //     //background-image: url(/media/donate/rtf-fund-img.jpg);
+    // }
 
-    #SponorAnimalCard .card-img-slot {
-        background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/dachshund-badger-dog-sausage-dog-wiener-dog-lying-in-front-of-white-background-ob4xxthtieu6admwff5207mibq4s49fakpvm61krn4.jpg);
-    }
+    // #SponorAnimalCard .card-img-slot {
+    //     background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/dachshund-badger-dog-sausage-dog-wiener-dog-lying-in-front-of-white-background-ob4xxthtieu6admwff5207mibq4s49fakpvm61krn4.jpg);
+    //     //background-image: url(/media/donate/sponsor-animal-img.jpg);
+    // }
 
-    #AdoptFeesCard .card-img-slot {
-        background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/daliana-obdk068870gvzbj9phvdzcnv0s3lqrzbdg26m8kcnc.png);
-    }
+    // #AdoptFeesCard .card-img-slot {
+    //     background-image: url(https://savingsagerescue.org/wp-content/uploads/elementor/thumbs/daliana-obdk068870gvzbj9phvdzcnv0s3lqrzbdg26m8kcnc.png);
+    //     //background-image: url(/media/donate/adopt-fees-img.png);
+    // }
 
     #donateCardContainer {
         padding-bottom: 20px;
     }
 
-    
+
 }
