@@ -32,13 +32,33 @@ namespace animalrescue.mainmodule.web.controllers
         public async Task<IActionResult> Create(LocationCreateVm locationCreateVm)
         {
             var locationDto = mapper.Map<LocationDto>(locationCreateVm);
-            var newId = await locationHandler.Create(locationDto);
+            var newId = await locationHandler.CreateAsync(locationDto);
             if(newId > 0)
             {
                 return RedirectToAction("Details", new { id = newId});
             }
             AddToModelState(validationResult);
             return View(locationCreateVm);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var locationDto = await locationHandler.GetByIdAsync(id);
+            var locationDetailsVm = mapper.Map<LocationDetailsVm?>(locationDto);
+            return View(locationDetailsVm);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Details(LocationUpdateVm locationUpdateVm)
+        {
+            var dto = mapper.Map<LocationDto>(locationUpdateVm);
+            var result = await locationHandler.UpdateAsync(dto);
+            if(result)
+            {
+                return RedirectToAction("Details", new { id = locationUpdateVm.Id});
+            }
+            AddToModelState(validationResult);
+            var detailsVm = mapper.Map<LocationDetailsVm>(locationUpdateVm);
+            return View(detailsVm);
         }
     }
 }
