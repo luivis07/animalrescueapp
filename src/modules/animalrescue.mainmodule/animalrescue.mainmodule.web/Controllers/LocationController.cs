@@ -28,7 +28,6 @@ namespace animalrescue.mainmodule.web.controllers
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Create(LocationCreateVm locationCreateVm)
         {
