@@ -8,7 +8,7 @@ using FluentValidation.Results;
 
 namespace animalrescue.mainmodule.services.handlers
 {
-    public class AnimalRescueAccountHandler : IAnimalRescueAccountHandler
+    public class AnimalRescueAccountHandler : BaseHandler, IAnimalRescueAccountHandler
     {
         private readonly IAnimalRescueAccountRepository animalRescueAccountRepository;
         private readonly IMapper mapper;

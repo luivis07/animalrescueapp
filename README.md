@@ -37,16 +37,17 @@
     - Examples:
       - `.\src\infrastructure\database\helpers\applymigrations.ps1` updates 'Development' db to the latest migration 
       - `.\src\infrastructure\database\helpers\applymigrations.ps1 -migrationname "NAME"` create a migration with name = NAME and updates db to latest
-      - `.\src\infrastructure\database\helpers\applymigrations.ps1 -environment "Production" -connectionstring "CONNECTION_STRING"` updates 'Production' db to the latest migration
+      - ~~`.\src\infrastructure\database\helpers\applymigrations.ps1 -environment "Production" -connectionstring "CONNECTION_STRING"` updates 'Production' db to the latest migration~~
+      - `.\src\infrastructure\database\helpers\applymigrations.ps1 -reset` drops current db and applies latest migration
     - View `.\src\infrastructure\database\helpers\applymigrations.ps1` for more info
-  - Development (local environment)
+  - ~~Development (local environment)~~
     - ~~`$env:ASPNETCORE_ENVIRONMENT="Development"`~~
     - ~~`dotnet ef migrations add MIGRATION_NAME --context LocalAnimalRescueContext --output-dir Migrations/SqliteMigrations --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj`~~
     - ~~`dotnet ef database update --context LocalAnimalRescueContext --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj`~~
   - Production (sql server db) make sure to replace `MIGRATION_NAME` and `CONNECTION_STRING`
-    - ~~`$env:ASPNETCORE_ENVIRONMENT="Production"`~~
-    - ~~`dotnet ef migrations add MIGRATION_NAME --context AnimalRescueContext --output-dir Migrations/SqlServerMigrations --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj`~~
-    - ~~`dotnet ef database update --context AnimalRescueContext --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj --connection "CONNECTION_STRING"`~~
+    - `$env:ASPNETCORE_ENVIRONMENT="Production"`
+    - `dotnet ef migrations add MIGRATION_NAME --context AnimalRescueContext --output-dir Migrations/SqlServerMigrations --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj`
+    - `dotnet ef database update --context AnimalRescueContext --project .\src\modules\animalrescue.mainmodule\animalrescue.mainmodule.dal\animalrescue.mainmodule.dal.csproj  --startup-project .\src\animalrescue.web\animalrescue.web.csproj --connection "CONNECTION_STRING"`
 
 - CI/CD:
   - Configured to deploy to https://sageanimalrescue.azurewebsites.net/ from `main` only

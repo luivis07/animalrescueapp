@@ -15,6 +15,8 @@ namespace animalrescue.mainmodule.dal.entityconfigurations
             builder.HasOne(c => c.Location)
             .WithMany(lc => lc.Calendars)
             .HasForeignKey(c => c.LocationId);
+
+            builder.Property(c => c.SerializedInfo).HasMaxLength(5000);
         }
     }
 }
