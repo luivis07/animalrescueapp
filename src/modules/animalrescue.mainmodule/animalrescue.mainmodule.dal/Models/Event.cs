@@ -8,6 +8,6 @@ namespace animalrescue.mainmodule.dal.models
     {
         public int Id {get; set;}
         public int CalendarId {get; set;}
-        public Calendar Calendar {get; set;}
+        public Calendar Calendar {get; set;} = null!;
     }
 }

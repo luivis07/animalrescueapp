@@ -9,11 +9,12 @@ import 'jquery-validation-unobtrusive';
 import '../scss/custom.scss';
 
 // Custom JS imports
-// ... none at the moment
+import '../js/customGeneral';
+import '../js/customJqueryValidate';
 
 // Custom CSS imports
 import '../css/site.css';
 
-(function($){
-    $(".ssar-link-group").addClass("row text-center");
-})(jQuery)
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;

@@ -8,7 +8,7 @@ namespace animalrescue.mainmodule.dal.entityconfigurations
     {
         public void Configure(EntityTypeBuilder<CalendarType> builder)
         {
-            
+            builder.Property(ct => ct.IsActive).HasDefaultValue(true);
         }
     }
 }

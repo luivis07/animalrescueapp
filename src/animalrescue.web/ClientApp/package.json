@@ -20,7 +20,8 @@
         "precss": "^4.0.0",
         "sass-loader": "^13.1.0",
         "webpack": "^5.70.0",
-        "webpack-cli": "^4.9.2"
+        "webpack-cli": "^4.9.2",
+        "jquery": "^3.6.1"
     },
     "scripts": {
         "build": "webpack"
