@@ -7,8 +7,8 @@ namespace animalrescue.mainmodule.services.validators
     {
         public CalendarTypeValidator()
         {
-            RuleFor(l => l.Id).GreaterThan(0);
-            RuleFor(l => l.Name).NotNull().NotEmpty();
+            RuleFor(ct => ct.Id).GreaterThan(0);
+            RuleFor(ct => ct.Name).NotNull().NotEmpty();
         }
     }
 }

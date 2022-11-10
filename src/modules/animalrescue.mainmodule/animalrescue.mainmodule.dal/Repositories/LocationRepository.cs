@@ -20,6 +20,11 @@ namespace animalrescue.mainmodule.dal.repositories
             return location.Id;
         }
 
+        public async Task<IEnumerable<Location>> GetAllAsync()
+        {
+            return await dbSet.ToListAsync();
+        }
+
         public async Task<Location?> GetByIdAsync(int id)
         {
             return await dbSet.SingleOrDefaultAsync(l => l.Id == id);

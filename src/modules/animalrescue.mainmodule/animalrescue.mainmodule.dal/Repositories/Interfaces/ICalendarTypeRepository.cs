@@ -5,6 +5,7 @@ namespace animalrescue.mainmodule.dal.repositories.interfaces
     public interface ICalendarTypeRepository
     {
         Task<int> CreateAsync(CalendarType calendarType);
+        Task<IEnumerable<CalendarType>> GetAllAsync();
         Task<CalendarType?> GetByIdAsync(int id);
         Task<bool> UpdateAsync(CalendarType calendarType, ICollection<string> modifiedProperties);
     }

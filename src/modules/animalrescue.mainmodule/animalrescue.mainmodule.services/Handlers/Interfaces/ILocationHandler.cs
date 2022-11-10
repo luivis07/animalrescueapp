@@ -7,5 +7,6 @@ namespace animalrescue.mainmodule.services.handlers.interfaces
         Task<int> CreateAsync(LocationDto locationDto);
         Task<LocationDto?> GetByIdAsync(int id);
         Task<bool> UpdateAsync(LocationDto dto);
+        Task<IEnumerable<LocationDto>> GetAllAsync();
     }
 }

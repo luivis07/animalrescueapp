@@ -20,6 +20,11 @@ namespace animalrescue.mainmodule.dal.repositories
             return calendarType.Id;
         }
 
+        public async Task<IEnumerable<CalendarType>> GetAllAsync()
+        {
+            return await dbSet.ToListAsync();
+        }
+
         public async Task<CalendarType?> GetByIdAsync(int id)
         {
             return await dbSet.SingleOrDefaultAsync(ct => ct.Id == id);

@@ -7,5 +7,6 @@ namespace animalrescue.mainmodule.services.handlers.interfaces
         Task<int> CreateAsync(CalendarTypeDto calendarTypeDto);
         Task<CalendarTypeDto?> GetByIdAsync(int id);
         Task<bool> UpdateAsync(CalendarTypeDto dto);
+        Task<IEnumerable<CalendarTypeDto>> GetAllAsync();
     }
 }

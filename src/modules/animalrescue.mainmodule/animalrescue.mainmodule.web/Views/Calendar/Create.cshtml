@@ -1,0 +1,16 @@
+@using animalrescue.mainmodule.web.viewmodels.calendar
+@model CalendarCreateVm
+
+<form asp-controller="Calendar" asp-action="Create" class="form-horizontal">
+    <div class="form-group">
+        <label asp-for="CalendarTypeId"></label>
+        <select asp-for="CalendarTypeId" class="form-control" asp-items="Model.CalendarTypesDropdown"></select>
+        <span asp-validation-for="CalendarTypeId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LocationId"></label>
+        <select asp-for="LocationId" class="form-control" asp-items="Model.LocationsDropdown"></select>
+        <span asp-validation-for="LocationId" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Create">
+</form>

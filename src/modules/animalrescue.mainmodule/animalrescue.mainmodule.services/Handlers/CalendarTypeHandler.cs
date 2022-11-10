@@ -31,6 +31,12 @@ namespace animalrescue.mainmodule.services.handlers
             return await calendarTypeRepository.CreateAsync(calendarType);
         }
 
+        public async Task<IEnumerable<CalendarTypeDto>> GetAllAsync()
+        {
+            var calendarTypes = await calendarTypeRepository.GetAllAsync();
+            return mapper.Map<IEnumerable<CalendarTypeDto>>(calendarTypes);
+        }
+
         public async Task<CalendarTypeDto?> GetByIdAsync(int id)
         {
             var calendarType = await calendarTypeRepository.GetByIdAsync(id);

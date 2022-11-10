@@ -31,6 +31,12 @@ namespace animalrescue.mainmodule.services.handlers
             return await locationRepository.CreateAsync(location);
         }
 
+        public async Task<IEnumerable<LocationDto>> GetAllAsync()
+        {
+            var locations = await locationRepository.GetAllAsync();
+            return mapper.Map<IEnumerable<LocationDto>>(locations);
+        }
+
         public async Task<LocationDto?> GetByIdAsync(int id)
         {
             var location = await locationRepository.GetByIdAsync(id);
