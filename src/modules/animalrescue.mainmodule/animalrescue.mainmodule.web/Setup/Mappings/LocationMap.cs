@@ -11,6 +11,13 @@ namespace animalrescue.mainmodule.web.mappings
             CreateMap<LocationCreateVm, LocationDto>()
                 .ForMember(dest => dest.Id, o => o.Ignore())
                 .ForMember(dest => dest.ChangedProperties, o => o.Ignore());
+
+            CreateMap<LocationUpdateVm, LocationDto>()
+                .ForMember(dest => dest.ChangedProperties, o => o.Ignore());
+
+            CreateMap<LocationDto, LocationDetailsVm>();
+
+            CreateMap<LocationUpdateVm, LocationDetailsVm>();
         }
     }
 }
