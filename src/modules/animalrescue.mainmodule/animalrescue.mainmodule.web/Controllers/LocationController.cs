@@ -32,7 +32,11 @@ namespace animalrescue.mainmodule.web.controllers
         public async Task<IActionResult> Create(LocationCreateVm locationCreateVm)
         {
             var locationDto = mapper.Map<LocationDto>(locationCreateVm);
+<<<<<<< HEAD
             var newId = await locationHandler.CreateAsync(locationDto);
+=======
+            var newId = await locationHandler.Create(locationDto);
+>>>>>>> main
             if(newId > 0)
             {
                 return RedirectToAction("Details", new { id = newId});
@@ -40,6 +44,7 @@ namespace animalrescue.mainmodule.web.controllers
             AddToModelState(validationResult);
             return View(locationCreateVm);
         }
+<<<<<<< HEAD
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
@@ -60,5 +65,7 @@ namespace animalrescue.mainmodule.web.controllers
             var detailsVm = mapper.Map<LocationDetailsVm>(locationUpdateVm);
             return View(detailsVm);
         }
+=======
+>>>>>>> main
     }
 }
