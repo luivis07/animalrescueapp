@@ -3,11 +3,8 @@ using animalrescue.mainmodule.dal.repositories.interfaces;
 using animalrescue.mainmodule.services.dtos;
 using animalrescue.mainmodule.services.handlers.interfaces;
 using AutoMapper;
-<<<<<<< HEAD
 using FluentValidation;
 using FluentValidation.Results;
-=======
->>>>>>> main
 
 namespace animalrescue.mainmodule.services.handlers
 {
@@ -15,7 +12,6 @@ namespace animalrescue.mainmodule.services.handlers
     {
         private readonly ILocationRepository locationRepository;
         private readonly IMapper mapper;
-<<<<<<< HEAD
         private readonly IValidator<LocationDto> validator;
         private readonly ValidationResult validationResult;
 
@@ -51,19 +47,6 @@ namespace animalrescue.mainmodule.services.handlers
             }
             var temp = mapper.Map<Location>(dto);
             return await locationRepository.UpdateAsync(temp, dto.ChangedProperties.ToList());
-=======
-
-        public LocationHandler(ILocationRepository locationRepository,
-            IMapper mapper)
-        {
-            this.locationRepository = locationRepository;
-            this.mapper = mapper;
-        }
-        public async Task<int> Create(LocationDto locationDto)
-        {
-            var location = mapper.Map<Location>(locationDto);
-            return await locationRepository.Create(location);
->>>>>>> main
         }
     }
 }
