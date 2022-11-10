@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using animalrescue.mainmodule.helpers.interfaces;
+using PropertyChanged;
 
 namespace animalrescue.mainmodule.services.dtos
 {
     public class LocationDto : BaseDto, IHasAddress
     {
+        [DoNotNotify]
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public bool IsActive { get; set; }
