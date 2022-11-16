@@ -13,7 +13,9 @@
         <select asp-for="LocationId" class="form-control form-select" asp-items="Model.LocationsDropdown"></select>
         <span asp-validation-for="LocationId" class="text-danger"></span>
     </div>
+    
+    <div id="calendar" style="height: 800px"></div>
+    
     <input type="submit" class="btn btn-primary" value="Save">
 </form>
 
-<div id="calendar" style="height: 800px"></div>

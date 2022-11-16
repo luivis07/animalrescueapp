@@ -11,6 +11,7 @@ import '../scss/custom.scss';
 // Custom JS imports
 import '../js/customGeneral';
 import '../js/customJqueryValidate';
+import '../js/calendar';
 
 // Custom CSS imports
 import '../css/site.css';
