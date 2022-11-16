@@ -35,9 +35,7 @@ namespace animalrescue.mainmodule.services.handlers
 
         public int Create(AnimalRescueAccountDto animalRescueAccountDto)
         {
-            var animalRescueAccount = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
-            var newId = animalRescueAccountRepository.Create(animalRescueAccount);
-            return newId;
+            return CreateAsync(animalRescueAccountDto).Result;
         }
 
         public async Task<AnimalRescueAccountDto?> GetByIdAsync(int id)
@@ -62,6 +60,11 @@ namespace animalrescue.mainmodule.services.handlers
             }
             var temp = mapper.Map<AnimalRescueAccount>(animalRescueAccountDto);
             return await animalRescueAccountRepository.UpdateAsync(temp, animalRescueAccountDto.ChangedProperties.ToList());
+        }
+
+        public AnimalRescueAccountDto? GetByUsername(string username)
+        {
+            return GetByUsernameAsync(username).Result;
         }
     }
 }
