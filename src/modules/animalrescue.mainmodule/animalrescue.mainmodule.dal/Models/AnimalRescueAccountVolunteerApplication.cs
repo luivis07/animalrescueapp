@@ -21,6 +21,17 @@ namespace animalrescue.mainmodule.dal.models
         public string? State {get;set;}
         public string? ZipCode {get;set;}
         public string? Country {get;set;}
+        public bool? HaveDogTraining {get;set;}
+        public string? DogTrainingDetails {get;set;}
+        public bool? HaveBottleFeeding {get;set;}
+        public string? BottleFeedingDetails {get;set;}
+        public bool? HaveGrantWriting {get;set;}
+        public string? GrantWritingDetails {get;set;}
+        public bool? OwnDog {get;set;}
+        public bool? OwnCat {get;set;}
+        public bool? ConvictedFelonyOfAnimals {get;set;}
         public virtual AnimalRescueAccount AnimalRescueAccount {get; set;} = null!;
+        public virtual IEnumerable<AnimalRescueAccountVolunteerApplicationInterest> AnimalRescueAccountVolunteerApplicationInterests {get;set;} = null!;
+        public virtual IEnumerable<AnimalRescueAccountVolunteerApplicationPurpose> AnimalRescueAccountVolunteerApplicationPurposes {get;set;} = null!;
     }
 }
