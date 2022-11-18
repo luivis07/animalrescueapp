@@ -24,6 +24,7 @@ namespace animalrescue.mainmodule.web.setup
         private static IServiceCollection RegisterOthers(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<IRegistrationFormEvents, UserRegistrationEvent>();
+            serviceCollection.AddScoped<ILoginFormEvent, LoginFormEvent>();
             return serviceCollection;
         }
     }

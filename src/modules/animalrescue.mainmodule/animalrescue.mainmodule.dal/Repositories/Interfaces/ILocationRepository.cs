@@ -4,6 +4,8 @@ namespace animalrescue.mainmodule.dal.repositories.interfaces
 {
     public interface ILocationRepository
     {
-        Task<int> Create(Location location);
+        Task<int> CreateAsync(Location location);
+        Task<Location?> GetByIdAsync(int id);
+        Task<bool> UpdateAsync(Location location, ICollection<string> modifiedProperties);
     }
 }
