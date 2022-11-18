@@ -1,28 +1,30 @@
 import Calendar from '@toast-ui/calendar';
 import '@toast-ui/calendar/dist/toastui-calendar.min.css';
 
-const calendar = new Calendar('#calendar', {
-    defaultView: 'week',
-    template: {
-      time(event) {
-        const { start, end, title } = event;
-  
-        return `<span style="color: white;">${formatTime(start)}~${formatTime(end)} ${title}</span>`;
-      },
-      allday(event) {
-        return `<span style="color: gray;">${event.title}</span>`;
-      },
-    },
-    calendars: [
-      {
-        id: 'cal1',
-        name: 'Personal',
-        backgroundColor: '#03bd9e',
-      },
-      {
-        id: 'cal2',
-        name: 'Work',
-        backgroundColor: '#00a9ff',
-      },
-    ],
+(function($){
+  var cal = $("#calendar");
+  var calendarControl = cal.closest(".ssar-calendar");
+
+  const calendar = new Calendar("#calendar", {
+    defaultView: 'month'
   });
+
+  var prev = calendarControl.find(".prev");
+  prev.on("click", function(e){
+    calendar.prev();
+    updateTitle(e);
+  });
+
+  var next = calendarControl.find(".next");
+  next.on("click", function(e){
+    calendar.next();
+    updateTitle(e);
+  });
+
+  var title = calendarControl.find(".title");
+  updateTitle();
+  function updateTitle(event){
+    title.text(calendar.getDate());
+  };
+
+})($)

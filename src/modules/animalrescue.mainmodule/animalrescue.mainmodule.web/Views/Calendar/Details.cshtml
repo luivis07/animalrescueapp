@@ -14,8 +14,23 @@
         <span asp-validation-for="LocationId" class="text-danger"></span>
     </div>
     
-    <div id="calendar" style="height: 800px"></div>
     
     <input type="submit" class="btn btn-primary" value="Save">
 </form>
 
+<div class="ssar-calendar container">
+    <div class="row text-center">
+        <span class="title"></span>
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-1">
+                <button class="prev btn btn-secondary" type="button">Prev</button>
+            </div>
+            <div class="col-lg-1">
+                <button class="next btn btn-secondary" type="button">Next</button>
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
+    </div>
+    <div id="calendar" style="height: 600px"></div>
+</div>
