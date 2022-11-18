@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace animalrescue.mainmodule.dal.models
 {
-    public class AnimalRescueAccountVolunteerApplicationPurpose
+    public class VolunteerApplicationPurpose
     {
-        public int AnimalRescueAccountVolunteerApplicationId {get;set;}
+        public int VolunteerApplicationId {get;set;}
         public int ApplicationPurposeId {get;set;}
-        public virtual AnimalRescueAccountVolunteerApplication AnimalRescueAccountVolunteerApplication { get; set;} = null!;
+        public virtual VolunteerApplication VolunteerApplication { get; set;} = null!;
         public virtual ApplicationPurpose ApplicationPurpose { get; set;} = null!;
     }
 }

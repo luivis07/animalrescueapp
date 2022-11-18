@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace animalrescue.mainmodule.dal.models
 {
-    public class Pet
+    public abstract class Pet
     {
         public int Id {get; set;}
         public int? PetTypeId {get;set;}

@@ -8,6 +8,6 @@ namespace animalrescue.mainmodule.dal.models
     {
         public int Id {get; set;}
         public string TypeOfPet {get;set;} = string.Empty;
-        public virtual IEnumerable<Pet> Pets {get; set;} = null!;
+        public virtual IEnumerable<VolunteerApplicationPet> VolunteerApplicationPets {get; set;} = null!;
     }
 }

@@ -8,7 +8,7 @@ namespace animalrescue.mainmodule.dal.models
     {
         public int Id {get; set;}
         public string Purpose {get; set;} = string.Empty;
-        public virtual IEnumerable<AnimalRescueAccountVolunteerApplicationPurpose> AnimalRescueAccountVolunteerApplicationPurposes {get;set;} = null!;
+        public virtual IEnumerable<VolunteerApplicationPurpose> VolunteerApplicationPurposes {get;set;} = null!;
 
     }
 }

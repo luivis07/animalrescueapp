@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace animalrescue.mainmodule.dal.models
 {
-    public class AnimalRescueAccountVolunteerApplication: IHasAddress
+    public class VolunteerApplication: IHasAddress
     {
         public int Id {get; set;}
         public int AnimalRescueAccountId {get; set;}
@@ -30,8 +30,11 @@ namespace animalrescue.mainmodule.dal.models
         public bool? OwnDog {get;set;}
         public bool? OwnCat {get;set;}
         public bool? ConvictedFelonyOfAnimals {get;set;}
+        public string? ConvictedFelonyOfAnimalsDetails {get;set;}
         public virtual AnimalRescueAccount AnimalRescueAccount {get; set;} = null!;
-        public virtual IEnumerable<AnimalRescueAccountVolunteerApplicationInterest> AnimalRescueAccountVolunteerApplicationInterests {get;set;} = null!;
-        public virtual IEnumerable<AnimalRescueAccountVolunteerApplicationPurpose> AnimalRescueAccountVolunteerApplicationPurposes {get;set;} = null!;
+        public virtual IEnumerable<VolunteerApplicationInterest> VolunteerApplicationInterests {get;set;} = null!;
+        public virtual IEnumerable<VolunteerApplicationPurpose> VolunteerApplicationPurposes {get;set;} = null!;
+        public virtual IEnumerable<VolunteerApplicationPet> VolunteerApplicationPets {get;set;} = null!;
+        public virtual IEnumerable<VolunteerApplicationAgreement> VolunteerApplicationAgreements {get;set;} = null!;
     }
 }
