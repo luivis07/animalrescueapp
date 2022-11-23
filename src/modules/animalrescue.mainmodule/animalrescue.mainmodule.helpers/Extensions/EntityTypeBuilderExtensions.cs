@@ -15,7 +15,7 @@ namespace animalrescue.mainmodule.helpers.extensions
             entityTypeBuilder.Property(ara => ara.Country).HasMaxLength(55);
         }
         
-        public static void BuildPet<T>(this EntityTypeBuilder<T> entityTypeBuilder) where T: class, IhasPetCharacteristics
+        public static void BuildPet<T>(this EntityTypeBuilder<T> entityTypeBuilder) where T: class, IHasPetCharacteristics
         {
             entityTypeBuilder.Property(p => p.Breed).HasMaxLength(100);
             entityTypeBuilder.Property(p => p.Sex).HasMaxLength(60);
