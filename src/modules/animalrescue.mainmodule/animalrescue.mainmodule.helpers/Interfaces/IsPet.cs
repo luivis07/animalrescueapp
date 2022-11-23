@@ -1,6 +1,6 @@
 namespace animalrescue.mainmodule.helpers.interfaces
 {
-    public interface IsPet
+    public interface IhasPetCharacteristics
     {
         public string? Breed {get; set;}
         public string? Sex {get;set;}
