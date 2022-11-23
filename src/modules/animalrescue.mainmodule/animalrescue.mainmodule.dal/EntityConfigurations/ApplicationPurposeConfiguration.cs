@@ -11,6 +11,8 @@ namespace animalrescue.mainmodule.dal.entityconfigurations
             builder.HasMany(ap => ap.VolunteerApplicationPurposes)
                 .WithOne(vap => vap.ApplicationPurpose)
                 .HasForeignKey(ap => ap.ApplicationPurposeId);
+
+            builder.Property(ap => ap.Purpose).HasMaxLength(100);             
         }
     }
 }
