@@ -14,7 +14,7 @@ namespace animalrescue.mainmodule.services.setup.mappings
             CreateMap<AnimalRescueAccountDto, AnimalRescueAccount>()
                 .ForMember(dest => dest.AnimalRescueAccountRoles, o => o.Ignore())
                 .ForMember(dest => dest.AnimalRescueAccountLocations, o => o.Ignore())
-                .ForMember(dest => dest.AnimalRescueAccountVolunteerApplication, o => o.Ignore())
+                .ForMember(dest => dest.VolunteerApplication, o => o.Ignore())
                 .ForMember(dest => dest.AnimalRescueAccountFosterApplication, o => o.Ignore())
                 .ForMember(dest => dest.AnimalRescueAccountAdoptionApplications, o => o.Ignore());
         }

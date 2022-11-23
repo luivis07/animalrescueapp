@@ -22,7 +22,7 @@ namespace animalrescue.mainmodule.dal.models
         public string? Country {get;set;}
         public virtual IEnumerable<AnimalRescueAccountRole> AnimalRescueAccountRoles { get; set; } = null!;
         public virtual IEnumerable<AnimalRescueAccountLocation> AnimalRescueAccountLocations { get; set; } = null!;
-        public virtual AnimalRescueAccountVolunteerApplication AnimalRescueAccountVolunteerApplication { get; set; } = null!;
+        public virtual VolunteerApplication VolunteerApplication { get; set; } = null!;
         public virtual AnimalRescueAccountFosterApplication AnimalRescueAccountFosterApplication { get; set; } = null!;
         public virtual IEnumerable<AnimalRescueAccountAdoptionApplication> AnimalRescueAccountAdoptionApplications { get; set; } = null!;
     }
