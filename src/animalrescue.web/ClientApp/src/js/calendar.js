@@ -5,18 +5,21 @@ import '@toast-ui/calendar/dist/toastui-calendar.min.css';
   var cal = $("#calendar");
   var calendarControl = cal.closest(".ssar-calendar");
 
-  const calendar = new Calendar("#calendar", {
+  var calendar = new Calendar("#calendar", {
     defaultView: 'month',
-    taskView: true
+    calendars: [{
+      id: 1,
+      name: 'My Calendar'
+    }],
+    useFormPopup: true,
+    useDetailPopup: true
   });
 
   fetch('https://localhost:7261/calendarevent')
     .then(response => {
-      console.log(response);
       return response.json();
     })
     .then(events => {
-      console.log(events);
       calendar.createEvents(events);
     })
 

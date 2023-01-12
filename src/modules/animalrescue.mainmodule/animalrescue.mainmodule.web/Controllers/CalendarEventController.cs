@@ -18,14 +18,16 @@ namespace animalrescue.mainmodule.web.controllers
             var events = new List<CalendarEvent>();
             for(var i = 1; i <= 5; i++)
             {
+                var tempStart = DateTime.Now.AddDays(i);
+                var tempEnd = tempStart.AddHours(5);
                 var ce = new CalendarEvent
                 {
                     Id = i,
                     CalendarId = 1,
                     Title = $"Event {i}",
-                    Category = "Test",
-                    Start = DateTime.Now.AddDays(i),
-                    End = DateTime.Now.AddHours(1)
+                    Category = "milestone",
+                    Start = tempStart,
+                    End = tempEnd
                 };
                 events.Add(ce);
             }
