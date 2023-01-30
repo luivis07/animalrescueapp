@@ -145,21 +145,52 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.ToTable("AnimalRescueAccountRole");
                 });
 
-            modelBuilder.Entity("animalrescue.mainmodule.dal.models.AnimalRescueAccountVolunteerApplication", b =>
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.ApplicationAgreement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AnimalRescueAccountId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Agreement")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimalRescueAccountId")
-                        .IsUnique();
+                    b.ToTable("ApplicationAgreement");
+                });
 
-                    b.ToTable("AnimalRescueAccountVolunteerApplication");
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.ApplicationInterest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Interest")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApplicationInterest");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.ApplicationPurpose", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Purpose")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApplicationPurpose");
                 });
 
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.Calendar", b =>
@@ -198,8 +229,9 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                         .HasColumnType("INTEGER")
                         .HasDefaultValue(true);
 
-                    b.Property<int>("Name")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -270,6 +302,22 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.ToTable("Location");
                 });
 
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.PetType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TypeOfPet")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PetType");
+                });
+
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -283,6 +331,184 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.HasKey("Id");
 
                     b.ToTable("Role");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplication", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address1")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address2")
+                        .HasMaxLength(60)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AnimalRescueAccountId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("BottleFeedingDetails")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(60)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool?>("ConvictedFelonyOfAnimals")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ConvictedFelonyOfAnimalsDetails")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Country")
+                        .HasMaxLength(55)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("date");
+
+                    b.Property<string>("DogTrainingDetails")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(150)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("GrantWritingDetails")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool?>("HaveBottleFeeding")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool?>("HaveDogTraining")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool?>("HaveGrantWriting")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("LastName")
+                        .HasMaxLength(150)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool?>("OwnCat")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool?>("OwnDog")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(150)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("State")
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ZipCode")
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnimalRescueAccountId")
+                        .IsUnique();
+
+                    b.ToTable("VolunteerApplication");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationAgreement", b =>
+                {
+                    b.Property<int>("VolunteerApplicationId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ApplicationAgreementId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("VolunteerApplicationId", "ApplicationAgreementId");
+
+                    b.HasIndex("ApplicationAgreementId");
+
+                    b.ToTable("VolunteerApplicationAgreement");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationInterest", b =>
+                {
+                    b.Property<int>("VolunteerApplicationId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ApplicationInterestId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("VolunteerApplicationId", "ApplicationInterestId");
+
+                    b.HasIndex("ApplicationInterestId");
+
+                    b.ToTable("VolunteerApplicationInterest");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationPet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Breed")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("PetTypeId")
+                        .IsRequired()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Sex")
+                        .HasMaxLength(60)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("VolunteerApplicationId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PetTypeId");
+
+                    b.HasIndex("VolunteerApplicationId");
+
+                    b.ToTable("VolunteerApplicationPet");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationPurpose", b =>
+                {
+                    b.Property<int>("VolunteerApplicationId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ApplicationPurposeId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("VolunteerApplicationId", "ApplicationPurposeId");
+
+                    b.HasIndex("ApplicationPurposeId");
+
+                    b.ToTable("VolunteerApplicationPurpose");
                 });
 
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.AnimalRescueAccountAdoptionApplication", b =>
@@ -345,17 +571,6 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("animalrescue.mainmodule.dal.models.AnimalRescueAccountVolunteerApplication", b =>
-                {
-                    b.HasOne("animalrescue.mainmodule.dal.models.AnimalRescueAccount", "AnimalRescueAccount")
-                        .WithOne("AnimalRescueAccountVolunteerApplication")
-                        .HasForeignKey("animalrescue.mainmodule.dal.models.AnimalRescueAccountVolunteerApplication", "AnimalRescueAccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AnimalRescueAccount");
-                });
-
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.Calendar", b =>
                 {
                     b.HasOne("animalrescue.mainmodule.dal.models.CalendarType", "CalendarType")
@@ -386,6 +601,93 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.Navigation("Calendar");
                 });
 
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplication", b =>
+                {
+                    b.HasOne("animalrescue.mainmodule.dal.models.AnimalRescueAccount", "AnimalRescueAccount")
+                        .WithOne("VolunteerApplication")
+                        .HasForeignKey("animalrescue.mainmodule.dal.models.VolunteerApplication", "AnimalRescueAccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AnimalRescueAccount");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationAgreement", b =>
+                {
+                    b.HasOne("animalrescue.mainmodule.dal.models.ApplicationAgreement", "ApplicationAgreement")
+                        .WithMany("VolunteerApplicationAgreements")
+                        .HasForeignKey("ApplicationAgreementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("animalrescue.mainmodule.dal.models.VolunteerApplication", "VolunteerApplication")
+                        .WithMany("VolunteerApplicationAgreements")
+                        .HasForeignKey("VolunteerApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationAgreement");
+
+                    b.Navigation("VolunteerApplication");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationInterest", b =>
+                {
+                    b.HasOne("animalrescue.mainmodule.dal.models.ApplicationInterest", "ApplicationInterest")
+                        .WithMany("VolunteerApplicationInterests")
+                        .HasForeignKey("ApplicationInterestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("animalrescue.mainmodule.dal.models.VolunteerApplication", "VolunteerApplication")
+                        .WithMany("VolunteerApplicationInterests")
+                        .HasForeignKey("VolunteerApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationInterest");
+
+                    b.Navigation("VolunteerApplication");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationPet", b =>
+                {
+                    b.HasOne("animalrescue.mainmodule.dal.models.PetType", "PetType")
+                        .WithMany("VolunteerApplicationPets")
+                        .HasForeignKey("PetTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("animalrescue.mainmodule.dal.models.VolunteerApplication", "VolunteerApplication")
+                        .WithMany("VolunteerApplicationPets")
+                        .HasForeignKey("VolunteerApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PetType");
+
+                    b.Navigation("VolunteerApplication");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplicationPurpose", b =>
+                {
+                    b.HasOne("animalrescue.mainmodule.dal.models.ApplicationPurpose", "ApplicationPurpose")
+                        .WithMany("VolunteerApplicationPurposes")
+                        .HasForeignKey("ApplicationPurposeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("animalrescue.mainmodule.dal.models.VolunteerApplication", "VolunteerApplication")
+                        .WithMany("VolunteerApplicationPurposes")
+                        .HasForeignKey("VolunteerApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationPurpose");
+
+                    b.Navigation("VolunteerApplication");
+                });
+
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.AnimalRescueAccount", b =>
                 {
                     b.Navigation("AnimalRescueAccountAdoptionApplications");
@@ -397,8 +699,23 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
 
                     b.Navigation("AnimalRescueAccountRoles");
 
-                    b.Navigation("AnimalRescueAccountVolunteerApplication")
+                    b.Navigation("VolunteerApplication")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.ApplicationAgreement", b =>
+                {
+                    b.Navigation("VolunteerApplicationAgreements");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.ApplicationInterest", b =>
+                {
+                    b.Navigation("VolunteerApplicationInterests");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.ApplicationPurpose", b =>
+                {
+                    b.Navigation("VolunteerApplicationPurposes");
                 });
 
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.Calendar", b =>
@@ -418,9 +735,25 @@ namespace animalrescue.mainmodule.dal.Migrations.SqliteMigrations
                     b.Navigation("Calendars");
                 });
 
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.PetType", b =>
+                {
+                    b.Navigation("VolunteerApplicationPets");
+                });
+
             modelBuilder.Entity("animalrescue.mainmodule.dal.models.Role", b =>
                 {
                     b.Navigation("AnimalRescueAccountRoles");
+                });
+
+            modelBuilder.Entity("animalrescue.mainmodule.dal.models.VolunteerApplication", b =>
+                {
+                    b.Navigation("VolunteerApplicationAgreements");
+
+                    b.Navigation("VolunteerApplicationInterests");
+
+                    b.Navigation("VolunteerApplicationPets");
+
+                    b.Navigation("VolunteerApplicationPurposes");
                 });
 #pragma warning restore 612, 618
         }

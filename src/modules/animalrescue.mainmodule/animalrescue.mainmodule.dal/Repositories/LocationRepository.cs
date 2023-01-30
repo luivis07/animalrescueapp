@@ -1,5 +1,6 @@
 using animalrescue.mainmodule.dal.models;
 using animalrescue.mainmodule.dal.repositories.interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace animalrescue.mainmodule.dal.repositories
 {
@@ -12,11 +13,21 @@ namespace animalrescue.mainmodule.dal.repositories
             this.animalRescueContext = animalRescueContext;
         }
 
-        public async Task<int> Create(Location location)
+        public async Task<int> CreateAsync(Location location)
         {
             dbSet.Add(location);
             await animalRescueContext.SaveChangesAsync();
             return location.Id;
+        }
+
+        public async Task<Location?> GetByIdAsync(int id)
+        {
+            return await dbSet.SingleOrDefaultAsync(l => l.Id == id);
+        }
+
+        public async Task<bool> UpdateAsync(Location location, ICollection<string> modifiedProperties)
+        {
+            return await base.UpdateAsync(location, modifiedProperties);
         }
     }
 }
