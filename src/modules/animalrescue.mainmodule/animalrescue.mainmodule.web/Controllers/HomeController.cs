@@ -10,7 +10,7 @@ namespace animalrescue.mainmodule.web.controllers
         [Route("/home/index")]
         public IActionResult Index()
         {
-            return View();
+            return Redirect("/home-page");
         }
         public IActionResult About()
         {
